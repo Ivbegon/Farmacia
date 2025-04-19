@@ -130,7 +130,7 @@ namespace Negocio.Medicamentos
             if (medicamento.Cantidad < 0)
                 throw new Exception("La cantidad no puede ser negativa");
 
-            if (medicamento.FechaVencimiento.HasValue && medicamento.FechaVencimiento.Value < DateTime.Today)
+            if (medicamento.FechaVencimiento < DateTime.Today)
                 throw new Exception("La fecha de vencimiento no puede ser anterior a hoy");
         }
     }
