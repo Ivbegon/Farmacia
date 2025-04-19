@@ -8,12 +8,12 @@ namespace entidades
 {
     public class Proveedor
     {
-        private int IdProveedor { get; set; }
-        private string Nombre { get; set; }
-        private string Telefono { get; set; }
-        private string Direccion { get; set; }
-        private string Email { get; set; }
-        private string Cif { get; set; }
+        public int IdProveedor { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public string Email { get; set; }
+        public string Cif { get; set; }
 
     }
 }

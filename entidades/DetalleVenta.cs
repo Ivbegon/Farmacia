@@ -8,8 +8,8 @@ namespace entidades
 {
     public class DetalleVenta
     {
-        private int IdVenta { get; set; }
-        private int IdMedicamento { get; set; }
-        private int Cantidad { get; set; }
+        public int IdVenta { get; set; }
+        public int IdMedicamento { get; set; }
+        public int Cantidad { get; set; }
     }
 }
