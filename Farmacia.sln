@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farmacia", "Farmacia\Farmac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datos", "datos\datos.csproj", "{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entidades", "entidades\entidades.csproj", "{BD9FC2E7-6F6C-4816-BB1E-227DA7698DDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9FC2E7-6F6C-4816-BB1E-227DA7698DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9FC2E7-6F6C-4816-BB1E-227DA7698DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9FC2E7-6F6C-4816-BB1E-227DA7698DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9FC2E7-6F6C-4816-BB1E-227DA7698DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
