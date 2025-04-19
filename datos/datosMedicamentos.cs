@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using Npgsql;
-using entidadesFarmacia;
+using entidades;
 using System.Collections.Generic;
 using datos;
 
@@ -67,11 +67,9 @@ namespace datos
                             Descripcion = lector["descripcion"].ToString(),
                             Precio = Convert.ToDecimal(lector["precio"]),
                             Cantidad = Convert.ToInt32(lector["cantidad"]),
-                            FechaVencimiento = lector["fecha_vencimiento"] != DBNull.Value ?
-                                Convert.ToDateTime(lector["fecha_vencimiento"]) : (DateTime?)null,
+                            FechaVencimiento = Convert.ToDateTime(lector["fecha_vencimiento"]),
                             RequiereReceta = Convert.ToBoolean(lector["requiere_receta"]),
-                            IdProveedor = lector["id_proveedor"] != DBNull.Value ?
-                                Convert.ToInt32(lector["id_proveedor"]) : (int?)null
+                            IdProveedor = Convert.ToInt32(lector["id_proveedor"])
                         };
                     }
                     return null;
@@ -95,11 +93,9 @@ namespace datos
                             Descripcion = lector["descripcion"].ToString(),
                             Precio = Convert.ToDecimal(lector["precio"]),
                             Cantidad = Convert.ToInt32(lector["cantidad"]),
-                            FechaVencimiento = lector["fecha_vencimiento"] != DBNull.Value ?
-                                Convert.ToDateTime(lector["fecha_vencimiento"]) : (DateTime?)null,
+                            FechaVencimiento = Convert.ToDateTime(lector["fecha_vencimiento"]),
                             RequiereReceta = Convert.ToBoolean(lector["requiere_receta"]),
-                            IdProveedor = lector["id_proveedor"] != DBNull.Value ?
-                                Convert.ToInt32(lector["id_proveedor"]) : (int?)null
+                            IdProveedor = Convert.ToInt32(lector["id_proveedor"])
                         });
                     }
                 }
@@ -125,11 +121,9 @@ namespace datos
                             Descripcion = lector["descripcion"].ToString(),
                             Precio = Convert.ToDecimal(lector["precio"]),
                             Cantidad = Convert.ToInt32(lector["cantidad"]),
-                            FechaVencimiento = lector["fecha_vencimiento"] != DBNull.Value ?
-                                Convert.ToDateTime(lector["fecha_vencimiento"]) : (DateTime?)null,
+                            FechaVencimiento = Convert.ToDateTime(lector["fecha_vencimiento"]),
                             RequiereReceta = Convert.ToBoolean(lector["requiere_receta"]),
-                            IdProveedor = lector["id_proveedor"] != DBNull.Value ?
-                                Convert.ToInt32(lector["id_proveedor"]) : (int?)null
+                            IdProveedor = Convert.ToInt32(lector["id_proveedor"])
                         });
                     }
                 }

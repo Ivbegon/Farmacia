@@ -8,14 +8,14 @@ namespace entidades
 {
     public class Medicamento
     {
-        private int IdMedicamento { get; set; }
-        private string Nombre { get; set; }
-        private string Descripcion { get; set; }
-        private decimal Precio { get; set; }
-        private int Cantidad { get; set; }
-        private DateTime FechaVencimiento { get; set; }
-        private bool RequiereReceta { get; set; }
-        private int IdProveedor { get; set; }
+        public int IdMedicamento { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public int Cantidad { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+        public bool RequiereReceta { get; set; }
+        public int IdProveedor { get; set; }
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using Npgsql;
-using entidadesFarmacia;
+using entidades;
 using System.Collections.Generic;
 using datos;
 

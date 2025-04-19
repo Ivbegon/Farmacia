@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using Npgsql;
-using entidadesFarmacia;
+using entidades;
 using System.Collections.Generic;
 using System;
 using datos;
@@ -54,7 +54,6 @@ namespace datos
                         {
                             IdVenta = Convert.ToInt32(lector["id_venta"]),
                             IdEmpleado = Convert.ToInt32(lector["id_empleado"]),
-                            EmpleadoNombre = $"{lector["empleado_nombre"]} {lector["empleado_apellido"]}",
                             Fecha = Convert.ToDateTime(lector["fecha"]),
                             Total = Convert.ToDecimal(lector["total"]),
                             Vuelto = Convert.ToDecimal(lector["vuelto"])
@@ -97,7 +96,6 @@ namespace datos
                         {
                             IdVenta = Convert.ToInt32(lector["id_venta"]),
                             IdEmpleado = Convert.ToInt32(lector["id_empleado"]),
-                            EmpleadoNombre = $"{lector["empleado_nombre"]} {lector["empleado_apellido"]}",
                             Fecha = Convert.ToDateTime(lector["fecha"]),
                             Total = Convert.ToDecimal(lector["total"]),
                             Vuelto = Convert.ToDecimal(lector["vuelto"])
@@ -126,10 +124,7 @@ namespace datos
                         {
                             IdVenta = Convert.ToInt32(lector["id_venta"]),
                             IdMedicamento = Convert.ToInt32(lector["id_medicamento"]),
-                            MedicamentoNombre = lector["medicamento_nombre"].ToString(),
                             Cantidad = Convert.ToInt32(lector["cantidad"]),
-                            PrecioUnitario = Convert.ToDecimal(lector["precio_unitario"]),
-                            Subtotal = Convert.ToDecimal(lector["cantidad"]) * Convert.ToDecimal(lector["precio_unitario"])
                         });
                     }
                 }

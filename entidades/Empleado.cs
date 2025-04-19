@@ -2,14 +2,14 @@
 {
     public class Empleado
     {
-        private int IdEmpleado { get; set; }
-        private string Nombre { get; set; }
-        private string Apellido { get; set; }
-        private string Dni { get; set; }
-        private string Telefono { get; set; }
-        private string Email { get; set; }
-        private string Nick { get; set; }
-        private string Password { get; set; }
+        public int IdEmpleado { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Dni { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
+        public string Nick { get; set; }
+        public string Password { get; set; }
     }
 
 }
