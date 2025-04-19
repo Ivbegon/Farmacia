@@ -4,6 +4,8 @@ VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farmacia", "Farmacia\Farmacia.csproj", "{B1FE796F-0BE1-4B29-BB68-F80A16D3D44D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datos", "datos\datos.csproj", "{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{B1FE796F-0BE1-4B29-BB68-F80A16D3D44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1FE796F-0BE1-4B29-BB68-F80A16D3D44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1FE796F-0BE1-4B29-BB68-F80A16D3D44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72AAEA9-5FF6-42A9-AF3E-6A2B2FAB6375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
