@@ -131,6 +131,33 @@ namespace datos
             return lista;
         }
 
+        public List<Proveedor> ListarProveedores()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+
+            using (NpgsqlCommand comando = CrearComando("SELECT * FROM proveedores", CommandType.Text))
+            {
+                using (NpgsqlDataReader lector = EjecutarLector(comando))
+                {
+                    while (lector.Read())
+                    {
+                        lista.Add(new Proveedor
+                        {
+                            IdProveedor = Convert.ToInt32(lector["id_proveedor"]),
+                            Nombre = lector["nombre"].ToString(),
+                            Telefono = lector["telefono"].ToString(),
+                            Direccion = lector["direccion"].ToString(),
+                            Email = lector["email"].ToString(),
+                            Cif = lector["cif"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+
         public void ActualizarStock(int idMedicamento, int cantidad)
         {
             using (NpgsqlCommand comando = CrearComando(

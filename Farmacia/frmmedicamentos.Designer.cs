@@ -46,7 +46,7 @@
             lblVencimiento = new Label();
             lblReceta = new Label();
             lblProveedor = new Label();
-            cmb_Proveedores = new ComboBox();
+            cmbProveedores = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
             SuspendLayout();
             // 
@@ -185,18 +185,18 @@
             lblProveedor.TabIndex = 14;
             lblProveedor.Text = "ID Proveedor:";
             // 
-            // cmb_Proveedores
+            // cmbProveedores
             // 
-            cmb_Proveedores.FormattingEnabled = true;
-            cmb_Proveedores.Location = new Point(153, 263);
-            cmb_Proveedores.Name = "cmb_Proveedores";
-            cmb_Proveedores.Size = new Size(318, 33);
-            cmb_Proveedores.TabIndex = 20;
+            cmbProveedores.FormattingEnabled = true;
+            cmbProveedores.Location = new Point(151, 263);
+            cmbProveedores.Name = "cmbProveedores";
+            cmbProveedores.Size = new Size(200, 33);
+            cmbProveedores.TabIndex = 20;
             // 
             // frmMedicamentos
             // 
-            ClientSize = new Size(1257, 492);
-            Controls.Add(cmb_Proveedores);
+            ClientSize = new Size(1048, 434);
+            Controls.Add(cmbProveedores);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblDescripcion);
@@ -221,6 +221,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
-        private ComboBox cmb_Proveedores;
+        private ComboBox cmbProveedores;
     }
 }
