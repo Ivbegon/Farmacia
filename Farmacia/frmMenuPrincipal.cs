@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Farmacia
 {
     public partial class frmMenuPrincipal: Form
     {
-        public frmMenuPrincipal()
+        private Empleado empleado;
+        public frmMenuPrincipal(Empleado empleado)
         {
             InitializeComponent();
+            this.empleado = empleado;
         }
 
         private void btnMedicamentos_Click(object sender, EventArgs e)

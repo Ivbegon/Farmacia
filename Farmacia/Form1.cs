@@ -23,12 +23,12 @@ namespace Farmacia
 
             string password = txtB_password.Text;
 
-            Console.WriteLine(login);
-            Console.WriteLine(password);
-
             try
             {
                 Empleado empleadoLogin = empleadosNegocio.Login(login, password);
+                frmMenuPrincipal menuPrincipal = new frmMenuPrincipal(empleadoLogin);
+                menuPrincipal.ShowDialog();
+
             }
             catch (Exception ex)
             {
