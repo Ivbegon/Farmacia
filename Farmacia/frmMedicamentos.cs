@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using entidades;
+using System.Windows.Forms.VisualStyles;
+using System.Globalization;
 
 namespace Farmacia
 {
@@ -38,23 +40,33 @@ namespace Farmacia
             {
                 Nombre = txtNombre.Text,
                 Descripcion = txtDescripcion.Text,
-                Precio = decimal.Parse(txtPrecio.Text),
-                Cantidad = int.Parse(txtCantidad.Text),
+                Precio = numBox_Precio.Value,
+                Cantidad = (int)numBox_Cantidad.Value,
                 FechaVencimiento = dtpVencimiento.Value,
                 RequiereReceta = chkReceta.Checked,
                 IdProveedor = idProveedor
             };
 
-            _medicamentosNegocio.CrearMedicamento(med);
-            CargarMedicamentos();
-            Limpiar();
+            try
+            {
+                _medicamentosNegocio.CrearMedicamento(med);
+                CargarMedicamentos();
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al agregar medicamento");
+            }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
+                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0]
+                    .Cells["idMedicamento"].Value);
+
                 int idProveedor = (int)cmbProveedores.SelectedValue;
 
                 Medicamento med = new Medicamento
@@ -62,16 +74,24 @@ namespace Farmacia
                     IdMedicamento = id,
                     Nombre = txtNombre.Text,
                     Descripcion = txtDescripcion.Text,
-                    Precio = decimal.Parse(txtPrecio.Text),
-                    Cantidad = int.Parse(txtCantidad.Text),
+                    Precio = numBox_Precio.Value,
+                    Cantidad = (int)numBox_Cantidad.Value,
                     FechaVencimiento = dtpVencimiento.Value,
                     RequiereReceta = chkReceta.Checked,
                     IdProveedor = idProveedor
                 };
 
-                _medicamentosNegocio.ActualizarMedicamento(med);
-                CargarMedicamentos();
-                Limpiar();
+                try
+                {
+                    _medicamentosNegocio.ActualizarMedicamento(med);
+                    CargarMedicamentos();
+                    Limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al agregar medicamento");
+                }
+
             }
             else
             {
@@ -83,8 +103,8 @@ namespace Farmacia
         {
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
-
+                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0]
+                     .Cells["idMedicamento"].Value);
 
                 _medicamentosNegocio.EliminarMedicamento(id);
 
@@ -105,8 +125,8 @@ namespace Farmacia
 
                 txtNombre.Text = row.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
-                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
-                txtCantidad.Text = row.Cells["Cantidad"].Value.ToString();
+                numBox_Precio.Value = decimal.Parse(row.Cells["Precio"].Value.ToString());
+                numBox_Cantidad.Value = int.Parse(row.Cells["Cantidad"].Value.ToString());
                 dtpVencimiento.Value = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value);
                 chkReceta.Checked = Convert.ToBoolean(row.Cells["RequiereReceta"].Value);
                 cmbProveedores.SelectedValue = Convert.ToInt32(row.Cells["IdProveedor"].Value);
@@ -119,6 +139,8 @@ namespace Farmacia
             cmbProveedores.DataSource = proveedores;
             cmbProveedores.DisplayMember = "Nombre";
             cmbProveedores.ValueMember = "IdProveedor";
+            if (proveedores.Count > 0)
+                cmbProveedores.SelectedIndex = 0;
         }
 
 
@@ -126,9 +148,14 @@ namespace Farmacia
         {
             txtNombre.Clear();
             txtDescripcion.Clear();
-            txtPrecio.Clear();
-            txtCantidad.Clear();
-            cmbProveedores.SelectedIndex = -1;
+            numBox_Precio.Value = 0;
+            numBox_Cantidad.Value = 0;
+
+            if (cmbProveedores.Items.Count > 0)
+                cmbProveedores.SelectedIndex = 0;
+            else
+                cmbProveedores.SelectedIndex = -1;
+            
             chkReceta.Checked = false;
         }
     }

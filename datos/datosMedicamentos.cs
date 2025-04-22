@@ -10,8 +10,12 @@ namespace datos
     {
         public int InsertarMedicamento(Medicamento medicamento)
         {
-            using (NpgsqlCommand comando = CrearComando("crear_medicamento", CommandType.StoredProcedure))
+            using (NpgsqlCommand comando = CrearComando(
+                "SELECT crear_medicamento(@p_nombre, @p_descripcion, @p_precio, @p_cantidad," +
+                " @p_fecha_vencimiento, @p_requiere_receta, @p_id_proveedor)", 
+                CommandType.Text))
             {
+
                 AgregarParametro(comando, "p_nombre", medicamento.Nombre, NpgsqlTypes.NpgsqlDbType.Varchar);
                 AgregarParametro(comando, "p_descripcion", medicamento.Descripcion, NpgsqlTypes.NpgsqlDbType.Text);
                 AgregarParametro(comando, "p_precio", medicamento.Precio, NpgsqlTypes.NpgsqlDbType.Numeric);
@@ -22,12 +26,17 @@ namespace datos
 
                 return Convert.ToInt32(EjecutarEscalar(comando));
             }
+
         }
 
         public void ActualizarMedicamento(Medicamento medicamento)
         {
-            using (NpgsqlCommand comando = CrearComando("actualizar_medicamento", CommandType.StoredProcedure))
+            using (NpgsqlCommand comando = CrearComando(
+                "SELECT actualizar_medicamento(@p_id, @p_nombre, @p_descripcion," +
+                " @p_precio, @p_cantidad, @p_fecha_vencimiento, @p_requiere_receta," +
+                " @p_id_proveedor)", CommandType.Text))
             {
+
                 AgregarParametro(comando, "p_id", medicamento.IdMedicamento, NpgsqlTypes.NpgsqlDbType.Integer);
                 AgregarParametro(comando, "p_nombre", medicamento.Nombre, NpgsqlTypes.NpgsqlDbType.Varchar);
                 AgregarParametro(comando, "p_descripcion", medicamento.Descripcion, NpgsqlTypes.NpgsqlDbType.Text);
@@ -37,13 +46,14 @@ namespace datos
                 AgregarParametro(comando, "p_requiere_receta", medicamento.RequiereReceta, NpgsqlTypes.NpgsqlDbType.Boolean);
                 AgregarParametro(comando, "p_id_proveedor", medicamento.IdProveedor, NpgsqlTypes.NpgsqlDbType.Integer);
 
-                EjecutarComando(comando);
+                EjecutarEscalar(comando);
             }
         }
 
         public void EliminarMedicamento(int idMedicamento)
         {
-            using (NpgsqlCommand comando = CrearComando("eliminar_medicamento", CommandType.StoredProcedure))
+            using (NpgsqlCommand comando = CrearComando(
+                "SELECT eliminar_medicamento(@p_id)", CommandType.Text))
             {
                 AgregarParametro(comando, "p_id", idMedicamento, NpgsqlTypes.NpgsqlDbType.Integer);
                 EjecutarComando(comando);
@@ -52,7 +62,8 @@ namespace datos
 
         public Medicamento ObtenerMedicamentoPorId(int idMedicamento)
         {
-            using (NpgsqlCommand comando = CrearComando("SELECT * FROM medicamentos WHERE id_medicamento = @id", CommandType.Text))
+            using (NpgsqlCommand comando = CrearComando(
+                "SELECT * FROM medicamentos WHERE id_medicamento = @id", CommandType.Text))
             {
                 AgregarParametro(comando, "@id", idMedicamento, NpgsqlTypes.NpgsqlDbType.Integer);
 

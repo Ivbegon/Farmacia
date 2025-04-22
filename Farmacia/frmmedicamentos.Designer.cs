@@ -6,8 +6,6 @@
         private System.Windows.Forms.DataGridView dgvMedicamentos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.CheckBox chkReceta;
         private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.Button btnAgregar;
@@ -32,8 +30,6 @@
             dgvMedicamentos = new DataGridView();
             txtNombre = new TextBox();
             txtDescripcion = new TextBox();
-            txtPrecio = new TextBox();
-            txtCantidad = new TextBox();
             chkReceta = new CheckBox();
             dtpVencimiento = new DateTimePicker();
             btnAgregar = new Button();
@@ -47,16 +43,23 @@
             lblReceta = new Label();
             lblProveedor = new Label();
             cmbProveedores = new ComboBox();
+            numBox_Cantidad = new NumericUpDown();
+            numBox_Precio = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numBox_Cantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numBox_Precio).BeginInit();
             SuspendLayout();
             // 
             // dgvMedicamentos
             // 
             dgvMedicamentos.ColumnHeadersHeight = 29;
             dgvMedicamentos.Location = new Point(542, 12);
+            dgvMedicamentos.MultiSelect = false;
             dgvMedicamentos.Name = "dgvMedicamentos";
+            dgvMedicamentos.ReadOnly = true;
             dgvMedicamentos.RowHeadersWidth = 51;
-            dgvMedicamentos.Size = new Size(686, 410);
+            dgvMedicamentos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMedicamentos.Size = new Size(1109, 410);
             dgvMedicamentos.TabIndex = 19;
             dgvMedicamentos.CellClick += dgvMedicamentos_CellClick;
             // 
@@ -73,20 +76,6 @@
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(320, 31);
             txtDescripcion.TabIndex = 5;
-            // 
-            // txtPrecio
-            // 
-            txtPrecio.Location = new Point(151, 103);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(320, 31);
-            txtPrecio.TabIndex = 7;
-            // 
-            // txtCantidad
-            // 
-            txtCantidad.Location = new Point(151, 143);
-            txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(320, 31);
-            txtCantidad.TabIndex = 9;
             // 
             // chkReceta
             // 
@@ -193,18 +182,34 @@
             cmbProveedores.Size = new Size(200, 33);
             cmbProveedores.TabIndex = 20;
             // 
+            // numBox_Cantidad
+            // 
+            numBox_Cantidad.Location = new Point(151, 144);
+            numBox_Cantidad.Name = "numBox_Cantidad";
+            numBox_Cantidad.Size = new Size(320, 31);
+            numBox_Cantidad.TabIndex = 21;
+            // 
+            // numBox_Precio
+            // 
+            numBox_Precio.DecimalPlaces = 2;
+            numBox_Precio.Location = new Point(151, 104);
+            numBox_Precio.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numBox_Precio.Name = "numBox_Precio";
+            numBox_Precio.Size = new Size(320, 31);
+            numBox_Precio.TabIndex = 22;
+            // 
             // frmMedicamentos
             // 
-            ClientSize = new Size(1048, 434);
+            ClientSize = new Size(1687, 513);
+            Controls.Add(numBox_Precio);
+            Controls.Add(numBox_Cantidad);
             Controls.Add(cmbProveedores);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblDescripcion);
             Controls.Add(txtDescripcion);
             Controls.Add(lblPrecio);
-            Controls.Add(txtPrecio);
             Controls.Add(lblCantidad);
-            Controls.Add(txtCantidad);
             Controls.Add(lblVencimiento);
             Controls.Add(dtpVencimiento);
             Controls.Add(lblReceta);
@@ -218,9 +223,13 @@
             Name = "frmMedicamentos";
             Text = "Gestión de Medicamentos";
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numBox_Cantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numBox_Precio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
         private ComboBox cmbProveedores;
+        private NumericUpDown numBox_Cantidad;
+        private NumericUpDown numBox_Precio;
     }
 }

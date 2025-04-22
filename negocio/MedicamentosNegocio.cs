@@ -16,9 +16,10 @@ namespace Negocio.Medicamentos
 
         public int CrearMedicamento(Medicamento medicamento)
         {
+            ValidarMedicamento(medicamento);
+
             try
-            {
-                ValidarMedicamento(medicamento);
+            { 
                 return _datosMedicamentos.InsertarMedicamento(medicamento);
             }
             catch (Exception ex)
@@ -29,7 +30,7 @@ namespace Negocio.Medicamentos
         }
 
         public void ActualizarMedicamento(Medicamento medicamento)
-        {
+        { 
             try
             {
                 ValidarMedicamento(medicamento);
@@ -132,20 +133,20 @@ namespace Negocio.Medicamentos
 
         private void ValidarMedicamento(Medicamento medicamento)
         {
-            if (medicamento == null)
-                throw new Exception("El medicamento no puede ser nulo");
+                if (medicamento == null)
+                    throw new Exception("El medicamento no puede ser nulo");
 
-            if (string.IsNullOrWhiteSpace(medicamento.Nombre))
-                throw new Exception("El nombre es requerido");
+                if (string.IsNullOrWhiteSpace(medicamento.Nombre))
+                    throw new Exception("El nombre es requerido");
 
-            if (medicamento.Precio <= 0)
-                throw new Exception("El precio debe ser mayor a cero");
+                if (medicamento.Precio <= 0)
+                    throw new Exception("El precio debe ser mayor a cero");
 
-            if (medicamento.Cantidad < 0)
-                throw new Exception("La cantidad no puede ser negativa");
+                if (medicamento.Cantidad < 0)
+                    throw new Exception("La cantidad no puede ser negativa");
 
-            if (medicamento.FechaVencimiento < DateTime.Today)
-                throw new Exception("La fecha de vencimiento no puede ser anterior a hoy");
+                if (medicamento.FechaVencimiento < DateTime.Today)
+                    throw new Exception("La fecha de vencimiento no puede ser anterior a hoy");
         }
     }
 }
