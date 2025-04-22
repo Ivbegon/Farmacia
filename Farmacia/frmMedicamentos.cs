@@ -38,7 +38,7 @@ namespace Farmacia
                 Cantidad = int.Parse(txtCantidad.Text),
                 FechaVencimiento = dtpVencimiento.Value,
                 RequiereReceta = chkReceta.Checked,
-                IdProveedor = int.Parse(txtProveedorId.Text)
+                //IdProveedor = int.Parse(txtProveedorId.Text)
             };
 
             _medicamentosNegocio.CrearMedicamento(med);
@@ -60,7 +60,7 @@ namespace Farmacia
                     Cantidad = int.Parse(txtCantidad.Text),
                     FechaVencimiento = dtpVencimiento.Value,
                     RequiereReceta = chkReceta.Checked,
-                    IdProveedor = int.Parse(txtProveedorId.Text)
+                    //IdProveedor = int.Parse(txtProveedorId.Text)
                 };
 
                 _medicamentosNegocio.ActualizarMedicamento(med);
@@ -102,7 +102,7 @@ namespace Farmacia
                 txtCantidad.Text = row.Cells["Cantidad"].Value.ToString();
                 dtpVencimiento.Value = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value);
                 chkReceta.Checked = Convert.ToBoolean(row.Cells["RequiereReceta"].Value);
-                txtProveedorId.Text = row.Cells["IdProveedor"].Value.ToString();
+                //txtProveedorId.Text = row.Cells["IdProveedor"].Value.ToString();
             }
         }
 
@@ -112,7 +112,7 @@ namespace Farmacia
             txtDescripcion.Clear();
             txtPrecio.Clear();
             txtCantidad.Clear();
-            txtProveedorId.Clear();
+            //txtProveedorId.Clear();
             chkReceta.Checked = false;
         }
     }

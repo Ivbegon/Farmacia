@@ -8,7 +8,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtProveedorId;
         private System.Windows.Forms.CheckBox chkReceta;
         private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.Button btnAgregar;
@@ -35,7 +34,6 @@
             txtDescripcion = new TextBox();
             txtPrecio = new TextBox();
             txtCantidad = new TextBox();
-            txtProveedorId = new TextBox();
             chkReceta = new CheckBox();
             dtpVencimiento = new DateTimePicker();
             btnAgregar = new Button();
@@ -48,13 +46,14 @@
             lblVencimiento = new Label();
             lblReceta = new Label();
             lblProveedor = new Label();
+            cmb_Proveedores = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
             SuspendLayout();
             // 
             // dgvMedicamentos
             // 
             dgvMedicamentos.ColumnHeadersHeight = 29;
-            dgvMedicamentos.Location = new Point(350, 12);
+            dgvMedicamentos.Location = new Point(542, 12);
             dgvMedicamentos.Name = "dgvMedicamentos";
             dgvMedicamentos.RowHeadersWidth = 51;
             dgvMedicamentos.Size = new Size(686, 410);
@@ -63,65 +62,58 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(120, 26);
+            txtNombre.Location = new Point(151, 23);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 27);
+            txtNombre.Size = new Size(320, 31);
             txtNombre.TabIndex = 3;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(120, 66);
+            txtDescripcion.Location = new Point(151, 63);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(200, 27);
+            txtDescripcion.Size = new Size(320, 31);
             txtDescripcion.TabIndex = 5;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(120, 106);
+            txtPrecio.Location = new Point(151, 103);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(200, 27);
+            txtPrecio.Size = new Size(320, 31);
             txtPrecio.TabIndex = 7;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(120, 146);
+            txtCantidad.Location = new Point(151, 143);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(200, 27);
+            txtCantidad.Size = new Size(320, 31);
             txtCantidad.TabIndex = 9;
-            // 
-            // txtProveedorId
-            // 
-            txtProveedorId.Location = new Point(120, 266);
-            txtProveedorId.Name = "txtProveedorId";
-            txtProveedorId.Size = new Size(200, 27);
-            txtProveedorId.TabIndex = 15;
             // 
             // chkReceta
             // 
-            chkReceta.Location = new Point(120, 226);
+            chkReceta.Location = new Point(151, 223);
             chkReceta.Name = "chkReceta";
             chkReceta.Size = new Size(104, 24);
             chkReceta.TabIndex = 13;
             // 
             // dtpVencimiento
             // 
-            dtpVencimiento.Location = new Point(120, 186);
+            dtpVencimiento.Location = new Point(151, 183);
             dtpVencimiento.Name = "dtpVencimiento";
-            dtpVencimiento.Size = new Size(200, 27);
+            dtpVencimiento.Size = new Size(320, 31);
             dtpVencimiento.TabIndex = 11;
             // 
             // btnAgregar
             // 
             btnAgregar.Location = new Point(20, 340);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 35);
+            btnAgregar.Size = new Size(100, 35);
             btnAgregar.TabIndex = 16;
             btnAgregar.Text = "Agregar";
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(120, 340);
+            btnEditar.Location = new Point(197, 340);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 35);
             btnEditar.TabIndex = 17;
@@ -130,9 +122,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(220, 340);
+            btnEliminar.Location = new Point(365, 340);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 35);
+            btnEliminar.Size = new Size(95, 35);
             btnEliminar.TabIndex = 18;
             btnEliminar.Text = "Eliminar";
             btnEliminar.Click += btnEliminar_Click;
@@ -189,13 +181,22 @@
             // 
             lblProveedor.Location = new Point(20, 266);
             lblProveedor.Name = "lblProveedor";
-            lblProveedor.Size = new Size(100, 23);
+            lblProveedor.Size = new Size(127, 31);
             lblProveedor.TabIndex = 14;
             lblProveedor.Text = "ID Proveedor:";
             // 
+            // cmb_Proveedores
+            // 
+            cmb_Proveedores.FormattingEnabled = true;
+            cmb_Proveedores.Location = new Point(153, 263);
+            cmb_Proveedores.Name = "cmb_Proveedores";
+            cmb_Proveedores.Size = new Size(318, 33);
+            cmb_Proveedores.TabIndex = 20;
+            // 
             // frmMedicamentos
             // 
-            ClientSize = new Size(1048, 434);
+            ClientSize = new Size(1257, 492);
+            Controls.Add(cmb_Proveedores);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblDescripcion);
@@ -209,7 +210,6 @@
             Controls.Add(lblReceta);
             Controls.Add(chkReceta);
             Controls.Add(lblProveedor);
-            Controls.Add(txtProveedorId);
             Controls.Add(btnAgregar);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
@@ -221,5 +221,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
+        private ComboBox cmb_Proveedores;
     }
 }
