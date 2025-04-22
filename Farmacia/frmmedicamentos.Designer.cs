@@ -4,7 +4,6 @@
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dgvMedicamentos;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
@@ -15,7 +14,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrecio;
@@ -32,97 +30,196 @@
 
         private void InitializeComponent()
         {
-            this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtProveedorId = new System.Windows.Forms.TextBox();
-            this.chkReceta = new System.Windows.Forms.CheckBox();
-            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblVencimiento = new System.Windows.Forms.Label();
-            this.lblReceta = new System.Windows.Forms.Label();
-            this.lblProveedor = new System.Windows.Forms.Label();
-
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
-            this.SuspendLayout();
-
-            this.lblId.Text = "ID:";
-            this.lblId.Location = new System.Drawing.Point(20, 20);
-            this.txtId.Location = new System.Drawing.Point(120, 20);
-            this.txtId.ReadOnly = true;
-
-            this.lblNombre.Text = "Nombre:";
-            this.lblNombre.Location = new System.Drawing.Point(20, 60);
-            this.txtNombre.Location = new System.Drawing.Point(120, 60);
-
-            this.lblDescripcion.Text = "Descripción:";
-            this.lblDescripcion.Location = new System.Drawing.Point(20, 100);
-            this.txtDescripcion.Location = new System.Drawing.Point(120, 100);
-
-            this.lblPrecio.Text = "Precio:";
-            this.lblPrecio.Location = new System.Drawing.Point(20, 140);
-            this.txtPrecio.Location = new System.Drawing.Point(120, 140);
-
-            this.lblCantidad.Text = "Cantidad:";
-            this.lblCantidad.Location = new System.Drawing.Point(20, 180);
-            this.txtCantidad.Location = new System.Drawing.Point(120, 180);
-
-            this.lblVencimiento.Text = "Fecha Venc:";
-            this.lblVencimiento.Location = new System.Drawing.Point(20, 220);
-            this.dtpVencimiento.Location = new System.Drawing.Point(120, 220);
-
-            this.lblReceta.Text = "Requiere receta:";
-            this.lblReceta.Location = new System.Drawing.Point(20, 260);
-            this.chkReceta.Location = new System.Drawing.Point(120, 260);
-
-            this.lblProveedor.Text = "ID Proveedor:";
-            this.lblProveedor.Location = new System.Drawing.Point(20, 300);
-            this.txtProveedorId.Location = new System.Drawing.Point(120, 300);
-
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.Location = new System.Drawing.Point(20, 340);
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Location = new System.Drawing.Point(120, 340);
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Location = new System.Drawing.Point(220, 340);
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-
-            this.dgvMedicamentos.Location = new System.Drawing.Point(350, 20);
-            this.dgvMedicamentos.Size = new System.Drawing.Size(600, 320);
-            this.dgvMedicamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellClick);
-
-            this.ClientSize = new System.Drawing.Size(980, 400);
-            this.Controls.AddRange(new Control[] {
-                lblId, txtId,
-                lblNombre, txtNombre,
-                lblDescripcion, txtDescripcion,
-                lblPrecio, txtPrecio,
-                lblCantidad, txtCantidad,
-                lblVencimiento, dtpVencimiento,
-                lblReceta, chkReceta,
-                lblProveedor, txtProveedorId,
-                btnAgregar, btnEditar, btnEliminar,
-                dgvMedicamentos
-            });
-
-            this.Text = "Gestión de Medicamentos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            dgvMedicamentos = new DataGridView();
+            txtNombre = new TextBox();
+            txtDescripcion = new TextBox();
+            txtPrecio = new TextBox();
+            txtCantidad = new TextBox();
+            txtProveedorId = new TextBox();
+            chkReceta = new CheckBox();
+            dtpVencimiento = new DateTimePicker();
+            btnAgregar = new Button();
+            btnEditar = new Button();
+            btnEliminar = new Button();
+            lblNombre = new Label();
+            lblDescripcion = new Label();
+            lblPrecio = new Label();
+            lblCantidad = new Label();
+            lblVencimiento = new Label();
+            lblReceta = new Label();
+            lblProveedor = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvMedicamentos
+            // 
+            dgvMedicamentos.ColumnHeadersHeight = 29;
+            dgvMedicamentos.Location = new Point(350, 12);
+            dgvMedicamentos.Name = "dgvMedicamentos";
+            dgvMedicamentos.RowHeadersWidth = 51;
+            dgvMedicamentos.Size = new Size(686, 410);
+            dgvMedicamentos.TabIndex = 19;
+            dgvMedicamentos.CellClick += dgvMedicamentos_CellClick;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(120, 26);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(200, 27);
+            txtNombre.TabIndex = 3;
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(120, 66);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(200, 27);
+            txtDescripcion.TabIndex = 5;
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.Location = new Point(120, 106);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(200, 27);
+            txtPrecio.TabIndex = 7;
+            // 
+            // txtCantidad
+            // 
+            txtCantidad.Location = new Point(120, 146);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(200, 27);
+            txtCantidad.TabIndex = 9;
+            // 
+            // txtProveedorId
+            // 
+            txtProveedorId.Location = new Point(120, 266);
+            txtProveedorId.Name = "txtProveedorId";
+            txtProveedorId.Size = new Size(200, 27);
+            txtProveedorId.TabIndex = 15;
+            // 
+            // chkReceta
+            // 
+            chkReceta.Location = new Point(120, 226);
+            chkReceta.Name = "chkReceta";
+            chkReceta.Size = new Size(104, 24);
+            chkReceta.TabIndex = 13;
+            // 
+            // dtpVencimiento
+            // 
+            dtpVencimiento.Location = new Point(120, 186);
+            dtpVencimiento.Name = "dtpVencimiento";
+            dtpVencimiento.Size = new Size(200, 27);
+            dtpVencimiento.TabIndex = 11;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(20, 340);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 35);
+            btnAgregar.TabIndex = 16;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(120, 340);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 35);
+            btnEditar.TabIndex = 17;
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(220, 340);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 35);
+            btnEliminar.TabIndex = 18;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // lblNombre
+            // 
+            lblNombre.Location = new Point(20, 26);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(100, 23);
+            lblNombre.TabIndex = 2;
+            lblNombre.Text = "Nombre:";
+            // 
+            // lblDescripcion
+            // 
+            lblDescripcion.Location = new Point(20, 66);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(100, 23);
+            lblDescripcion.TabIndex = 4;
+            lblDescripcion.Text = "Descripción:";
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.Location = new Point(20, 106);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(100, 23);
+            lblPrecio.TabIndex = 6;
+            lblPrecio.Text = "Precio:";
+            // 
+            // lblCantidad
+            // 
+            lblCantidad.Location = new Point(20, 146);
+            lblCantidad.Name = "lblCantidad";
+            lblCantidad.Size = new Size(100, 23);
+            lblCantidad.TabIndex = 8;
+            lblCantidad.Text = "Cantidad:";
+            // 
+            // lblVencimiento
+            // 
+            lblVencimiento.Location = new Point(20, 186);
+            lblVencimiento.Name = "lblVencimiento";
+            lblVencimiento.Size = new Size(100, 23);
+            lblVencimiento.TabIndex = 10;
+            lblVencimiento.Text = "Fecha Venc:";
+            // 
+            // lblReceta
+            // 
+            lblReceta.Location = new Point(20, 226);
+            lblReceta.Name = "lblReceta";
+            lblReceta.Size = new Size(100, 23);
+            lblReceta.TabIndex = 12;
+            lblReceta.Text = "Requiere receta:";
+            // 
+            // lblProveedor
+            // 
+            lblProveedor.Location = new Point(20, 266);
+            lblProveedor.Name = "lblProveedor";
+            lblProveedor.Size = new Size(100, 23);
+            lblProveedor.TabIndex = 14;
+            lblProveedor.Text = "ID Proveedor:";
+            // 
+            // frmMedicamentos
+            // 
+            ClientSize = new Size(1048, 434);
+            Controls.Add(lblNombre);
+            Controls.Add(txtNombre);
+            Controls.Add(lblDescripcion);
+            Controls.Add(txtDescripcion);
+            Controls.Add(lblPrecio);
+            Controls.Add(txtPrecio);
+            Controls.Add(lblCantidad);
+            Controls.Add(txtCantidad);
+            Controls.Add(lblVencimiento);
+            Controls.Add(dtpVencimiento);
+            Controls.Add(lblReceta);
+            Controls.Add(chkReceta);
+            Controls.Add(lblProveedor);
+            Controls.Add(txtProveedorId);
+            Controls.Add(btnAgregar);
+            Controls.Add(btnEditar);
+            Controls.Add(btnEliminar);
+            Controls.Add(dgvMedicamentos);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "frmMedicamentos";
+            Text = "Gestión de Medicamentos";
+            ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

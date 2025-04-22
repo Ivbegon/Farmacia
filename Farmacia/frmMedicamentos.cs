@@ -48,29 +48,46 @@ namespace Farmacia
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Medicamento med = new Medicamento
+            if (dgvMedicamentos.SelectedRows.Count > 0)
             {
-                IdMedicamento = int.Parse(txtId.Text),
-                Nombre = txtNombre.Text,
-                Descripcion = txtDescripcion.Text,
-                Precio = decimal.Parse(txtPrecio.Text),
-                Cantidad = int.Parse(txtCantidad.Text),
-                FechaVencimiento = dtpVencimiento.Value,
-                RequiereReceta = chkReceta.Checked,
-                IdProveedor = int.Parse(txtProveedorId.Text)
-            };
+                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
 
-            _medicamentosNegocio.ActualizarMedicamento(med);
-            CargarMedicamentos();
-            Limpiar();
+                Medicamento med = new Medicamento
+                {
+                    Nombre = txtNombre.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Precio = decimal.Parse(txtPrecio.Text),
+                    Cantidad = int.Parse(txtCantidad.Text),
+                    FechaVencimiento = dtpVencimiento.Value,
+                    RequiereReceta = chkReceta.Checked,
+                    IdProveedor = int.Parse(txtProveedorId.Text)
+                };
+
+                _medicamentosNegocio.ActualizarMedicamento(med);
+                CargarMedicamentos();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un medicamento para editar.");
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtId.Text);
-            _medicamentosNegocio.EliminarMedicamento(id);  
-            CargarMedicamentos();
-            Limpiar();
+            if (dgvMedicamentos.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
+
+                _medicamentosNegocio.EliminarMedicamento(id);
+
+                CargarMedicamentos();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un medicamento para eliminar.");
+            }
         }
 
         private void dgvMedicamentos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -79,7 +96,6 @@ namespace Farmacia
             {
                 DataGridViewRow row = dgvMedicamentos.Rows[e.RowIndex];
 
-                txtId.Text = row.Cells["IdMedicamento"].Value.ToString();
                 txtNombre.Text = row.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = row.Cells["Precio"].Value.ToString();
@@ -92,7 +108,6 @@ namespace Farmacia
 
         private void Limpiar()
         {
-            txtId.Clear();
             txtNombre.Clear();
             txtDescripcion.Clear();
             txtPrecio.Clear();
