@@ -116,6 +116,20 @@ namespace Negocio.Medicamentos
             }
         }
 
+        public List<Proveedor> ListarProveedores()
+        {
+            try
+            {
+                return _datosMedicamentos.ListarProveedores();
+            }
+            catch (Exception ex)
+            {
+                ManejarError(ex, "Error al listar proveedores");
+                return new List<Proveedor>();
+            }
+        }
+
+
         private void ValidarMedicamento(Medicamento medicamento)
         {
             if (medicamento == null)

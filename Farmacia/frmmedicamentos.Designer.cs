@@ -8,7 +8,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtProveedorId;
         private System.Windows.Forms.CheckBox chkReceta;
         private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.Button btnAgregar;
@@ -35,7 +34,6 @@
             txtDescripcion = new TextBox();
             txtPrecio = new TextBox();
             txtCantidad = new TextBox();
-            txtProveedorId = new TextBox();
             chkReceta = new CheckBox();
             dtpVencimiento = new DateTimePicker();
             btnAgregar = new Button();
@@ -48,6 +46,7 @@
             lblVencimiento = new Label();
             lblReceta = new Label();
             lblProveedor = new Label();
+            cmbProveedores = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
             SuspendLayout();
             // 
@@ -88,13 +87,6 @@
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(200, 27);
             txtCantidad.TabIndex = 9;
-            // 
-            // txtProveedorId
-            // 
-            txtProveedorId.Location = new Point(120, 266);
-            txtProveedorId.Name = "txtProveedorId";
-            txtProveedorId.Size = new Size(200, 27);
-            txtProveedorId.TabIndex = 15;
             // 
             // chkReceta
             // 
@@ -193,9 +185,18 @@
             lblProveedor.TabIndex = 14;
             lblProveedor.Text = "ID Proveedor:";
             // 
+            // cmbProveedores
+            // 
+            cmbProveedores.FormattingEnabled = true;
+            cmbProveedores.Location = new Point(120, 266);
+            cmbProveedores.Name = "cmbProveedores";
+            cmbProveedores.Size = new Size(200, 28);
+            cmbProveedores.TabIndex = 20;
+            // 
             // frmMedicamentos
             // 
             ClientSize = new Size(1048, 434);
+            Controls.Add(cmbProveedores);
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblDescripcion);
@@ -209,7 +210,6 @@
             Controls.Add(lblReceta);
             Controls.Add(chkReceta);
             Controls.Add(lblProveedor);
-            Controls.Add(txtProveedorId);
             Controls.Add(btnAgregar);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
@@ -221,5 +221,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
+        private ComboBox cmbProveedores;
     }
 }

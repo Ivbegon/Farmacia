@@ -21,6 +21,7 @@ namespace Farmacia
             InitializeComponent();
             _medicamentosNegocio = new MedicamentosNegocio();
             CargarMedicamentos();
+            CargarProveedores();
         }
 
         private void CargarMedicamentos()
@@ -30,6 +31,9 @@ namespace Farmacia
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
+            int idProveedor = (int)cmbProveedores.SelectedValue;
+
             Medicamento med = new Medicamento
             {
                 Nombre = txtNombre.Text,
@@ -38,7 +42,7 @@ namespace Farmacia
                 Cantidad = int.Parse(txtCantidad.Text),
                 FechaVencimiento = dtpVencimiento.Value,
                 RequiereReceta = chkReceta.Checked,
-                IdProveedor = int.Parse(txtProveedorId.Text)
+                IdProveedor = idProveedor
             };
 
             _medicamentosNegocio.CrearMedicamento(med);
@@ -51,16 +55,18 @@ namespace Farmacia
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
+                int idProveedor = (int)cmbProveedores.SelectedValue;
 
                 Medicamento med = new Medicamento
                 {
+                    IdMedicamento = id,
                     Nombre = txtNombre.Text,
                     Descripcion = txtDescripcion.Text,
                     Precio = decimal.Parse(txtPrecio.Text),
                     Cantidad = int.Parse(txtCantidad.Text),
                     FechaVencimiento = dtpVencimiento.Value,
                     RequiereReceta = chkReceta.Checked,
-                    IdProveedor = int.Parse(txtProveedorId.Text)
+                    IdProveedor = idProveedor
                 };
 
                 _medicamentosNegocio.ActualizarMedicamento(med);
@@ -78,6 +84,7 @@ namespace Farmacia
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0].Cells["Id"].Value);
+
 
                 _medicamentosNegocio.EliminarMedicamento(id);
 
@@ -102,9 +109,18 @@ namespace Farmacia
                 txtCantidad.Text = row.Cells["Cantidad"].Value.ToString();
                 dtpVencimiento.Value = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value);
                 chkReceta.Checked = Convert.ToBoolean(row.Cells["RequiereReceta"].Value);
-                txtProveedorId.Text = row.Cells["IdProveedor"].Value.ToString();
+                cmbProveedores.SelectedValue = Convert.ToInt32(row.Cells["IdProveedor"].Value);
             }
         }
+
+        private void CargarProveedores()
+        {
+            List<Proveedor> proveedores = _medicamentosNegocio.ListarProveedores(); // Asegúrate de que esta función exista
+            cmbProveedores.DataSource = proveedores;
+            cmbProveedores.DisplayMember = "Nombre";
+            cmbProveedores.ValueMember = "IdProveedor";
+        }
+
 
         private void Limpiar()
         {
@@ -112,7 +128,7 @@ namespace Farmacia
             txtDescripcion.Clear();
             txtPrecio.Clear();
             txtCantidad.Clear();
-            txtProveedorId.Clear();
+            cmbProveedores.SelectedIndex = -1;
             chkReceta.Checked = false;
         }
     }
