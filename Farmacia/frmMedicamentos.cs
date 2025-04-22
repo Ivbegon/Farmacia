@@ -115,7 +115,7 @@ namespace Farmacia
 
         private void CargarProveedores()
         {
-            List<Proveedor> proveedores = _medicamentosNegocio.ListarProveedores(); // Asegúrate de que esta función exista
+            List<Proveedor> proveedores = _medicamentosNegocio.ListarProveedores();
             cmbProveedores.DataSource = proveedores;
             cmbProveedores.DisplayMember = "Nombre";
             cmbProveedores.ValueMember = "IdProveedor";
