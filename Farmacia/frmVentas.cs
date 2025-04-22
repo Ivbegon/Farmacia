@@ -104,6 +104,16 @@ namespace Farmacia
                 MessageBox.Show($"Factura de Venta {idVenta}:\nTotal: {venta.Total:C}\nVuelto: {venta.Vuelto:C}");
             }
         }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = txtBox_Busqueda.Text;
+
+            if (busqueda.Equals(""))
+                dgvBusqueda.DataSource = medicamentosNegocio.ListarMedicamentos();
+            else
+                dgvBusqueda.DataSource = medicamentosNegocio.BuscarMedicamentos(busqueda);
+        }
     }
 
 }

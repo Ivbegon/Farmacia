@@ -27,6 +27,7 @@ namespace Farmacia
             {
                 Empleado empleadoLogin = empleadosNegocio.Login(login, password);
                 frmMenuPrincipal menuPrincipal = new frmMenuPrincipal(empleadoLogin);
+                ClearLogin();
                 menuPrincipal.ShowDialog();
 
             }
@@ -34,6 +35,12 @@ namespace Farmacia
             {
                 MessageBox.Show(ex.Message, "Error al hacer login");
             }
+        }
+
+        private void ClearLogin()
+        {
+            txtB_usuario.Text = string.Empty;
+            txtB_password.Text = string.Empty;
         }
     }
 }
