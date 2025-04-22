@@ -13,7 +13,7 @@ namespace datos
 
         public datosPostgreSQL()
         {
-            MCadenaConexion = "Server=localhost;Database=farmacia;User ID=postgres;Password=postgres;";
+            MCadenaConexion = "Port=5433;Server=localhost;Database=farmacia;Username=postgres;Password=postgres;";
         }
 
         protected NpgsqlConnection Conexion

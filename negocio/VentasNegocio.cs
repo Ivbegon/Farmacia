@@ -35,9 +35,12 @@ namespace Negocio.Ventas
                     if (medicamento.Cantidad < detalle.Cantidad)
                         throw new Exception($"Stock insuficiente para {medicamento.Nombre}");
 
-                    detalle.PrecioUnitario = medicamento.Precio;
-                    detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
-                    total += detalle.Subtotal;
+                    //Arreglar el total de los reguistros de ventas
+
+
+                    //detalle.PrecioUnitario = medicamento.Precio;
+                    //detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
+                    //total += detalle.Subtotal;
                 }
 
                 venta.Total = total;

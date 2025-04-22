@@ -103,7 +103,7 @@ namespace datos
 
         public Empleado ValidarLogin(string nick, string password)
         {
-            using (NpgsqlCommand comando = CrearComando("login_empleado", CommandType.StoredProcedure))
+            using (NpgsqlCommand comando = CrearComando("SELECT * FROM login_empleado(@p_nick, @p_password)", CommandType.Text))
             {
                 AgregarParametro(comando, "p_nick", nick, NpgsqlTypes.NpgsqlDbType.Varchar);
                 AgregarParametro(comando, "p_password", password, NpgsqlTypes.NpgsqlDbType.Varchar);

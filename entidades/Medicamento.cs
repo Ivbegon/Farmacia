@@ -16,6 +16,5 @@ namespace entidades
         public DateTime FechaVencimiento { get; set; }
         public bool RequiereReceta { get; set; }
         public int IdProveedor { get; set; }
-
     }
 }

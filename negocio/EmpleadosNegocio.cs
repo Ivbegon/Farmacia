@@ -2,6 +2,7 @@
 using entidades;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Negocio.Empleados
 {
@@ -16,15 +17,17 @@ namespace Negocio.Empleados
 
         public Empleado Login(string nick, string password)
         {
+
+            if (string.IsNullOrWhiteSpace(nick) || string.IsNullOrWhiteSpace(password))
+                throw new Exception("Nick y password son requeridos");
+
             try
             {
-                if (string.IsNullOrWhiteSpace(nick) || string.IsNullOrWhiteSpace(password))
-                    throw new Exception("Nick y password son requeridos");
-
                 return _datosEmpleados.ValidarLogin(nick, password);
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
                 ManejarError(ex, "Error al intentar iniciar sesión");
                 return null;
             }
