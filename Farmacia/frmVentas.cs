@@ -22,38 +22,55 @@ namespace Farmacia
         public frmVentas()
         {
             InitializeComponent();
-            CargarMedicamentos();
-            ListarVentas();
-        }
-
-        private void CargarMedicamentos()
-        {
-            var medicamentos = medicamentosNegocio.ListarMedicamentos();
-            cmbMedicamento.DataSource = medicamentos;
-            cmbMedicamento.DisplayMember = "Nombre";
-            cmbMedicamento.ValueMember = "IdMedicamento";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var seleccionado = (Medicamento)cmbMedicamento.SelectedItem;
             int cantidad = (int)nudCantidad.Value;
 
-            if (cantidad > seleccionado.Cantidad)
+            if (dgvBusqueda.SelectedRows.Count > 0)
             {
-                MessageBox.Show("No hay suficiente stock.");
-                return;
+                Medicamento seleccionado = (Medicamento)dgvBusqueda.SelectedRows[0].DataBoundItem;
+                int idMedicamento = seleccionado.IdMedicamento;
+
+
+                if (cantidad > seleccionado.Cantidad)
+                {
+                    MessageBox.Show("No hay suficiente stock.");
+                    return;
+                }
+
+                DetalleVenta detalleFind =
+                    detalles.Find(m => m.IdMedicamento == seleccionado.IdMedicamento);
+
+                if (detalleFind == null)
+                {
+                    detalles.Add(new DetalleVenta
+                    {
+                        IdMedicamento = seleccionado.IdMedicamento,
+                        Cantidad = cantidad
+                    });
+                }
+                else
+                {
+                    if (detalleFind.Cantidad + cantidad > seleccionado.Cantidad)
+                    {
+                        MessageBox.Show("No hay suficiente stock.");
+                        return;
+                    }
+                    detalles[detalles.IndexOf(detalleFind)].Cantidad += cantidad;
+                }
+
+                dgvDetalleVenta.DataSource = null;
+                dgvDetalleVenta.DataSource = detalles;
+
+                CalcularTotal();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un medicamento.");
             }
 
-            detalles.Add(new DetalleVenta
-            {
-                IdMedicamento = seleccionado.IdMedicamento,
-                Cantidad = cantidad
-            });
-
-            dgvDetalleVenta.DataSource = null;
-            dgvDetalleVenta.DataSource = detalles;
-            CalcularTotal();
         }
 
         private void CalcularTotal()
@@ -69,7 +86,7 @@ namespace Farmacia
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            decimal montoRecibido = decimal.Parse(txtRecibido.Text);
+            decimal montoRecibido = numBox_Cambio.Value;
             decimal total = detalles.Sum(d =>
             {
                 var med = medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
@@ -87,22 +104,6 @@ namespace Farmacia
             MessageBox.Show($"Venta registrada con ID {idVenta}");
             detalles.Clear();
             dgvDetalleVenta.DataSource = null;
-            ListarVentas();
-        }
-
-        private void ListarVentas()
-        {
-            dgvVentas.DataSource = ventasNegocio.ListarVentas();
-        }
-
-        private void btnVerFactura_Click(object sender, EventArgs e)
-        {
-            if (dgvVentas.CurrentRow != null)
-            {
-                int idVenta = (int)dgvVentas.CurrentRow.Cells["IdVenta"].Value;
-                var venta = ventasNegocio.ObtenerVenta(idVenta);
-                MessageBox.Show($"Factura de Venta {idVenta}:\nTotal: {venta.Total:C}\nVuelto: {venta.Vuelto:C}");
-            }
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -113,6 +114,29 @@ namespace Farmacia
                 dgvBusqueda.DataSource = medicamentosNegocio.ListarMedicamentos();
             else
                 dgvBusqueda.DataSource = medicamentosNegocio.BuscarMedicamentos(busqueda);
+        }
+
+        private void numBox_Cambio_ValueChanged(object sender, EventArgs e)
+        {
+            decimal total = 0;
+            foreach (var det in detalles)
+            {
+                var med = medicamentosNegocio.ObtenerMedicamento(det.IdMedicamento);
+                total += med.Precio * det.Cantidad;
+            }
+            decimal cambio =  numBox_Cambio.Value - total;
+
+
+
+            if (cambio >= 0)
+            {
+                lblCambio.Text = $"Cambio: {cambio:C2}";
+            }
+            else
+            {
+                cambio = cambio * -1;
+                MessageBox.Show($"Todavia falta {cambio:C2}", "Faltan");
+            }
         }
     }
 
