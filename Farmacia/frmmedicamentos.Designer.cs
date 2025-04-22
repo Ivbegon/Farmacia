@@ -45,189 +45,128 @@
             cmbProveedores = new ComboBox();
             numBox_Cantidad = new NumericUpDown();
             numBox_Precio = new NumericUpDown();
+            GroupBox groupDatos = new GroupBox();
+
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numBox_Cantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numBox_Precio).BeginInit();
             SuspendLayout();
-            // 
-            // dgvMedicamentos
-            // 
-            dgvMedicamentos.ColumnHeadersHeight = 29;
+
+            // FORM
+            BackColor = Color.WhiteSmoke;
+            Font = new Font("Segoe UI", 10F);
+            StartPosition = FormStartPosition.CenterScreen;
+            ClientSize = new Size(1687, 513);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "frmMedicamentos";
+            Text = "Gestión de Medicamentos";
+
+            // GROUPBOX
+            groupDatos.Text = "Datos del Medicamento";
+            groupDatos.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            groupDatos.Size = new Size(500, 310);
+            groupDatos.Location = new Point(20, 12);
+
+            // LABELS & CONTROLS
+            lblNombre.Text = "Nombre:";
+            lblNombre.Location = new Point(20, 30);
+            txtNombre.Location = new Point(150, 28);
+            txtNombre.Size = new Size(320, 31);
+
+            lblDescripcion.Text = "Descripción:";
+            lblDescripcion.Location = new Point(20, 70);
+            txtDescripcion.Location = new Point(150, 68);
+            txtDescripcion.Size = new Size(320, 31);
+
+            lblPrecio.Text = "Precio:";
+            lblPrecio.Location = new Point(20, 110);
+            numBox_Precio.Location = new Point(150, 108);
+            numBox_Precio.DecimalPlaces = 2;
+            numBox_Precio.Maximum = 1000;
+            numBox_Precio.Size = new Size(320, 31);
+
+            lblCantidad.Text = "Cantidad:";
+            lblCantidad.Location = new Point(20, 150);
+            numBox_Cantidad.Location = new Point(150, 148);
+            numBox_Cantidad.Size = new Size(320, 31);
+
+            lblVencimiento.Text = "Fecha Venc:";
+            lblVencimiento.Location = new Point(20, 190);
+            dtpVencimiento.Location = new Point(150, 188);
+            dtpVencimiento.Size = new Size(320, 31);
+
+            lblReceta.Text = "Requiere receta:";
+            lblReceta.Location = new Point(20, 230);
+            chkReceta.Location = new Point(150, 228);
+
+            lblProveedor.Text = "ID Proveedor:";
+            lblProveedor.Location = new Point(20, 270);
+            cmbProveedores.Location = new Point(150, 268);
+            cmbProveedores.Size = new Size(200, 33);
+
+            // BOTONES
+            btnAgregar.Text = "Agregar";
+            btnAgregar.Location = new Point(20, 340);
+            btnAgregar.Size = new Size(100, 35);
+            btnAgregar.Click += btnAgregar_Click;
+
+            btnEditar.Text = "Editar";
+            btnEditar.Location = new Point(140, 340);
+            btnEditar.Size = new Size(100, 35);
+            btnEditar.Click += btnEditar_Click;
+
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Location = new Point(260, 340);
+            btnEliminar.Size = new Size(100, 35);
+            btnEliminar.Click += btnEliminar_Click;
+
+            // DATAGRIDVIEW
             dgvMedicamentos.Location = new Point(542, 12);
-            dgvMedicamentos.MultiSelect = false;
-            dgvMedicamentos.Name = "dgvMedicamentos";
-            dgvMedicamentos.ReadOnly = true;
-            dgvMedicamentos.RowHeadersWidth = 51;
-            dgvMedicamentos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMedicamentos.Size = new Size(1109, 410);
+            dgvMedicamentos.ReadOnly = true;
+            dgvMedicamentos.MultiSelect = false;
+            dgvMedicamentos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMedicamentos.ColumnHeadersHeight = 29;
+            dgvMedicamentos.RowHeadersWidth = 51;
             dgvMedicamentos.TabIndex = 19;
             dgvMedicamentos.CellClick += dgvMedicamentos_CellClick;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(151, 23);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(320, 31);
-            txtNombre.TabIndex = 3;
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(151, 63);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(320, 31);
-            txtDescripcion.TabIndex = 5;
-            // 
-            // chkReceta
-            // 
-            chkReceta.Location = new Point(151, 223);
-            chkReceta.Name = "chkReceta";
-            chkReceta.Size = new Size(104, 24);
-            chkReceta.TabIndex = 13;
-            // 
-            // dtpVencimiento
-            // 
-            dtpVencimiento.Location = new Point(151, 183);
-            dtpVencimiento.Name = "dtpVencimiento";
-            dtpVencimiento.Size = new Size(320, 31);
-            dtpVencimiento.TabIndex = 11;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(20, 340);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(100, 35);
-            btnAgregar.TabIndex = 16;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Location = new Point(197, 340);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 35);
-            btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(365, 340);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(95, 35);
-            btnEliminar.TabIndex = 18;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // lblNombre
-            // 
-            lblNombre.Location = new Point(20, 26);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(100, 23);
-            lblNombre.TabIndex = 2;
-            lblNombre.Text = "Nombre:";
-            // 
-            // lblDescripcion
-            // 
-            lblDescripcion.Location = new Point(20, 66);
-            lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(100, 23);
-            lblDescripcion.TabIndex = 4;
-            lblDescripcion.Text = "Descripción:";
-            // 
-            // lblPrecio
-            // 
-            lblPrecio.Location = new Point(20, 106);
-            lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(100, 23);
-            lblPrecio.TabIndex = 6;
-            lblPrecio.Text = "Precio:";
-            // 
-            // lblCantidad
-            // 
-            lblCantidad.Location = new Point(20, 146);
-            lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(100, 23);
-            lblCantidad.TabIndex = 8;
-            lblCantidad.Text = "Cantidad:";
-            // 
-            // lblVencimiento
-            // 
-            lblVencimiento.Location = new Point(20, 186);
-            lblVencimiento.Name = "lblVencimiento";
-            lblVencimiento.Size = new Size(100, 23);
-            lblVencimiento.TabIndex = 10;
-            lblVencimiento.Text = "Fecha Venc:";
-            // 
-            // lblReceta
-            // 
-            lblReceta.Location = new Point(20, 226);
-            lblReceta.Name = "lblReceta";
-            lblReceta.Size = new Size(100, 23);
-            lblReceta.TabIndex = 12;
-            lblReceta.Text = "Requiere receta:";
-            // 
-            // lblProveedor
-            // 
-            lblProveedor.Location = new Point(20, 266);
-            lblProveedor.Name = "lblProveedor";
-            lblProveedor.Size = new Size(127, 31);
-            lblProveedor.TabIndex = 14;
-            lblProveedor.Text = "ID Proveedor:";
-            // 
-            // cmbProveedores
-            // 
-            cmbProveedores.FormattingEnabled = true;
-            cmbProveedores.Location = new Point(151, 263);
-            cmbProveedores.Name = "cmbProveedores";
-            cmbProveedores.Size = new Size(200, 33);
-            cmbProveedores.TabIndex = 20;
-            // 
-            // numBox_Cantidad
-            // 
-            numBox_Cantidad.Location = new Point(151, 144);
-            numBox_Cantidad.Name = "numBox_Cantidad";
-            numBox_Cantidad.Size = new Size(320, 31);
-            numBox_Cantidad.TabIndex = 21;
-            // 
-            // numBox_Precio
-            // 
-            numBox_Precio.DecimalPlaces = 2;
-            numBox_Precio.Location = new Point(151, 104);
-            numBox_Precio.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numBox_Precio.Name = "numBox_Precio";
-            numBox_Precio.Size = new Size(320, 31);
-            numBox_Precio.TabIndex = 22;
-            // 
-            // frmMedicamentos
-            // 
-            ClientSize = new Size(1687, 513);
-            Controls.Add(numBox_Precio);
-            Controls.Add(numBox_Cantidad);
-            Controls.Add(cmbProveedores);
-            Controls.Add(lblNombre);
-            Controls.Add(txtNombre);
-            Controls.Add(lblDescripcion);
-            Controls.Add(txtDescripcion);
-            Controls.Add(lblPrecio);
-            Controls.Add(lblCantidad);
-            Controls.Add(lblVencimiento);
-            Controls.Add(dtpVencimiento);
-            Controls.Add(lblReceta);
-            Controls.Add(chkReceta);
-            Controls.Add(lblProveedor);
+
+            dgvMedicamentos.EnableHeadersVisualStyles = false;
+            dgvMedicamentos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(100, 149, 237);
+            dgvMedicamentos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvMedicamentos.DefaultCellStyle.BackColor = Color.White;
+            dgvMedicamentos.DefaultCellStyle.ForeColor = Color.Black;
+            dgvMedicamentos.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgvMedicamentos.DefaultCellStyle.SelectionBackColor = Color.SkyBlue;
+            dgvMedicamentos.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvMedicamentos.RowTemplate.Height = 35;
+
+            // ADD CONTROLS TO GROUPBOX
+            groupDatos.Controls.AddRange(new Control[]
+            {
+                lblNombre, txtNombre,
+                lblDescripcion, txtDescripcion,
+                lblPrecio, numBox_Precio,
+                lblCantidad, numBox_Cantidad,
+                lblVencimiento, dtpVencimiento,
+                lblReceta, chkReceta,
+                lblProveedor, cmbProveedores
+            });
+
+            // ADD TO FORM
+            Controls.Add(groupDatos);
             Controls.Add(btnAgregar);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(dgvMedicamentos);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "frmMedicamentos";
-            Text = "Gestión de Medicamentos";
+
             ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).EndInit();
             ((System.ComponentModel.ISupportInitialize)numBox_Cantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)numBox_Precio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
         private ComboBox cmbProveedores;
         private NumericUpDown numBox_Cantidad;
         private NumericUpDown numBox_Precio;
