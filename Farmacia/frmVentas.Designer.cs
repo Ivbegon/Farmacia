@@ -254,6 +254,7 @@
             // 
             // butt_Limpiar
             // 
+            butt_Limpiar.BackColor = Color.FromArgb(46, 204, 113);
             butt_Limpiar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             butt_Limpiar.Location = new Point(1651, 526);
             butt_Limpiar.Name = "butt_Limpiar";
