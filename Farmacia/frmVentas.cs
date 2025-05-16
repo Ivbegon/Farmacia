@@ -31,7 +31,7 @@ namespace Farmacia
             if (dgvBusqueda.SelectedRows.Count > 0)
             {
                 Medicamento seleccionado = (Medicamento)dgvBusqueda.SelectedRows[0].DataBoundItem;
-                int idMedicamento = seleccionado.IdMedicamento;
+                int id_medicamento = seleccionado.IdMedicamento;
 
                 if (cantidad > seleccionado.Cantidad)
                 {
@@ -40,24 +40,24 @@ namespace Farmacia
                 }
 
                 DetalleVenta detalleFind =
-                    detalles.Find(m => m.IdMedicamento == seleccionado.IdMedicamento);
+                    detalles.Find(m => m.id_medicamento == seleccionado.IdMedicamento);
 
                 if (detalleFind == null)
                 {
                     detalles.Add(new DetalleVenta
                     {
-                        IdMedicamento = seleccionado.IdMedicamento,
-                        Cantidad = cantidad
+                        id_medicamento = seleccionado.IdMedicamento,
+                        cantidad = cantidad
                     });
                 }
                 else
                 {
-                    if (detalleFind.Cantidad + cantidad > seleccionado.Cantidad)
+                    if (detalleFind.cantidad + cantidad > seleccionado.Cantidad)
                     {
                         MessageBox.Show("No hay suficiente stock.");
                         return;
                     }
-                    detalles[detalles.IndexOf(detalleFind)].Cantidad += cantidad;
+                    detalles[detalles.IndexOf(detalleFind)].cantidad += cantidad;
                 }
 
                 dgvDetalleVenta.DataSource = null;
@@ -77,14 +77,14 @@ namespace Farmacia
 
             dgvDetalleVenta.Columns.Add("NombreProducto", "Nombre Producto");
             dgvDetalleVenta.Columns.Add("Descripcion", "Descripción");
-            dgvDetalleVenta.Columns.Add("Cantidad", "Cantidad");
+            dgvDetalleVenta.Columns.Add("cantidad", "cantidad");
             dgvDetalleVenta.Columns.Add("Costo", "Costo");
 
             detalles.ForEach(d =>
             {
                 Medicamento med =
-                    medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
-                decimal costo = med.Precio * d.Cantidad;
+                    medicamentosNegocio.ObtenerMedicamento(d.id_medicamento);
+                decimal costo = med.Precio * d.cantidad;
                 dgvDetalleVenta.Rows
                     .Add(med.Nombre, med.Descripcion, med.Cantidad, costo);
             });
@@ -95,8 +95,8 @@ namespace Farmacia
             decimal total = 0;
             foreach (var det in detalles)
             {
-                var med = medicamentosNegocio.ObtenerMedicamento(det.IdMedicamento);
-                total += med.Precio * det.Cantidad;
+                var med = medicamentosNegocio.ObtenerMedicamento(det.id_medicamento);
+                total += med.Precio * det.cantidad;
             }
             lblTotal.Text = $"Total: {total:C}";
         }
@@ -108,8 +108,8 @@ namespace Farmacia
                 decimal montoRecibido = numBox_Cambio.Value;
                 decimal total = detalles.Sum(d =>
                 {
-                    var med = medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
-                    return med.Precio * d.Cantidad;
+                    var med = medicamentosNegocio.ObtenerMedicamento(d.id_medicamento);
+                    return med.Precio * d.cantidad;
                 });
 
                 Venta venta = new Venta
@@ -118,6 +118,12 @@ namespace Farmacia
                     Vuelto = montoRecibido,
                     Total = total
                 };
+
+                detalles.ForEach(d =>
+                {
+                    MessageBox.Show(d.id_medicamento.ToString(), "Id");
+                });
+                
 
                 int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
                 MessageBox.Show($"Venta registrada con ID {idVenta}");
@@ -145,8 +151,8 @@ namespace Farmacia
             decimal total = 0;
             foreach (var det in detalles)
             {
-                var med = medicamentosNegocio.ObtenerMedicamento(det.IdMedicamento);
-                total += med.Precio * det.Cantidad;
+                var med = medicamentosNegocio.ObtenerMedicamento(det.id_medicamento);
+                total += med.Precio * det.cantidad;
             }
             decimal cambio = numBox_Cambio.Value - total;
 

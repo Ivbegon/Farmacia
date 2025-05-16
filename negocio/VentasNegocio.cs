@@ -27,14 +27,15 @@ namespace Negocio.Ventas
                 decimal total = 0;
                 foreach (var detalle in detalles)
                 {
-                    var medicamento = _medicamentosNegocio.ObtenerMedicamento(detalle.IdMedicamento);
-                    if (medicamento == null)
-                        throw new Exception($"Medicamento con ID {detalle.IdMedicamento} no encontrado");
+                    var medicamento = _medicamentosNegocio.ObtenerMedicamento(detalle.id_medicamento);
 
-                    if (medicamento.Cantidad < detalle.Cantidad)
+                    if (medicamento == null)
+                        throw new Exception($"Medicamento con ID {detalle.id_medicamento} no encontrado");
+
+                    if (medicamento.Cantidad < detalle.cantidad)
                         throw new Exception($"Stock insuficiente para {medicamento.Nombre}");
 
-                    decimal subtotal = medicamento.Precio * detalle.Cantidad;
+                    decimal subtotal = medicamento.Precio * detalle.cantidad;
                     total += subtotal;
                 }
 
@@ -45,11 +46,12 @@ namespace Negocio.Ventas
                 venta.Vuelto = venta.Vuelto - total;
                 venta.Fecha = DateTime.Now;
 
+
                 int idVenta = _datosVentas.RegistrarVenta(venta, detalles);
 
                 foreach (var detalle in detalles)
                 {
-                    _medicamentosNegocio.ActualizarStock(detalle.IdMedicamento, -detalle.Cantidad);
+                    _medicamentosNegocio.ActualizarStock(detalle.id_medicamento, -detalle.cantidad);
                 }
 
                 return idVenta;
@@ -115,10 +117,10 @@ namespace Negocio.Ventas
             decimal total = 0;
             foreach (var detalle in detalles)
             {
-                var medicamento = _medicamentosNegocio.ObtenerMedicamento(detalle.IdMedicamento);
+                var medicamento = _medicamentosNegocio.ObtenerMedicamento(detalle.id_medicamento);
                 if (medicamento != null)
                 {
-                    total += medicamento.Precio * detalle.Cantidad;
+                    total += medicamento.Precio * detalle.cantidad;
                 }
             }
             return total;
@@ -137,10 +139,10 @@ namespace Negocio.Ventas
 
             foreach (var detalle in detalles)
             {
-                if (detalle.IdMedicamento <= 0)
+                if (detalle.id_medicamento <= 0)
                     throw new Exception("ID de medicamento inválido en detalle");
 
-                if (detalle.Cantidad <= 0)
+                if (detalle.cantidad <= 0)
                     throw new Exception("La cantidad debe ser mayor a cero");
             }
         }

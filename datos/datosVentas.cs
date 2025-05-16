@@ -15,15 +15,22 @@ namespace datos
             {
                 IniciarTransaccion();
 
+
+                if (detalles.Any(d => d.id_medicamento == 0)) // Ajusta según tu modelo
+                {
+                    throw new Exception("Uno o más medicamentos no tienen ID especificado");
+                }
+
                 // Convertir detalles a formato JSON para pasarlo a la función
                 string detallesJson = Newtonsoft.Json.JsonConvert.SerializeObject(detalles);
 
-                using (NpgsqlCommand comando = CrearComando("crear_venta", CommandType.StoredProcedure))
+                using (NpgsqlCommand comando = CrearComando("SELECT crear_venta(@p_id_empleado," +
+                    " @p_total, @p_vuelto, @p_detalles)", CommandType.Text))
                 {
                     AgregarParametro(comando, "p_id_empleado", venta.IdEmpleado, NpgsqlTypes.NpgsqlDbType.Integer);
                     AgregarParametro(comando, "p_total", venta.Total, NpgsqlTypes.NpgsqlDbType.Numeric);
                     AgregarParametro(comando, "p_vuelto", venta.Vuelto, NpgsqlTypes.NpgsqlDbType.Numeric);
-                    AgregarParametro(comando, "p_detalles", detallesJson, NpgsqlTypes.NpgsqlDbType.Json);
+                    AgregarParametro(comando, "p_detalles", detallesJson, NpgsqlTypes.NpgsqlDbType.Jsonb);
 
                     int idVenta = Convert.ToInt32(EjecutarEscalar(comando));
                     ConfirmarTransaccion();
@@ -122,9 +129,9 @@ namespace datos
                     {
                         detalles.Add(new DetalleVenta
                         {
-                            IdVenta = Convert.ToInt32(lector["id_venta"]),
-                            IdMedicamento = Convert.ToInt32(lector["id_medicamento"]),
-                            Cantidad = Convert.ToInt32(lector["cantidad"]),
+                            id_venta = Convert.ToInt32(lector["id_venta"]),
+                            id_medicamento = Convert.ToInt32(lector["id_medicamento"]),
+                            cantidad = Convert.ToInt32(lector["cantidad"]),
                         });
                     }
                 }
