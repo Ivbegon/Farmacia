@@ -18,6 +18,7 @@ namespace Farmacia
         {
             InitializeComponent();
             this.empleado = empleado;
+            //this.WindowState = FormWindowState.Normal;
         }
 
         private void btnMedicamentos_Click(object sender, EventArgs e)

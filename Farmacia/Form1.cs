@@ -26,9 +26,20 @@ namespace Farmacia
             try
             {
                 Empleado empleadoLogin = empleadosNegocio.Login(login, password);
-                frmMenuPrincipal menuPrincipal = new frmMenuPrincipal(empleadoLogin);
-                ClearLogin();
-                menuPrincipal.ShowDialog();
+                if (empleadoLogin != null)
+                {
+                    frmMenuPrincipal menuPrincipal =
+                        new frmMenuPrincipal(empleadoLogin);
+
+                    ClearLogin();
+                    //this.WindowState = FormWindowState.Minimized;
+                    menuPrincipal.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos",
+                        "Error al hacer login");
+                }
 
             }
             catch (Exception ex)

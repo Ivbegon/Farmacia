@@ -26,8 +26,7 @@ namespace Negocio.Empleados
                 return _datosEmpleados.ValidarLogin(nick, password);
             }
             catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
+            { 
                 ManejarError(ex, "Error al intentar iniciar sesión");
                 return null;
             }

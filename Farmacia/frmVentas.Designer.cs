@@ -25,8 +25,8 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             dgvDetalleVenta = new DataGridView();
             groupBox1 = new GroupBox();
             dgvBusqueda = new DataGridView();
@@ -43,6 +43,7 @@
             groupBoxCobro = new GroupBox();
             lblCambio = new Label();
             numBox_Cambio = new NumericUpDown();
+            butt_Cancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDetalleVenta).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBusqueda).BeginInit();
@@ -54,18 +55,18 @@
             // 
             // dgvDetalleVenta
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dgvDetalleVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvDetalleVenta.ColumnHeadersHeight = 34;
             dgvDetalleVenta.Location = new Point(23, 47);
             dgvDetalleVenta.Margin = new Padding(20);
@@ -74,7 +75,7 @@
             dgvDetalleVenta.ReadOnly = true;
             dgvDetalleVenta.RowHeadersWidth = 62;
             dgvDetalleVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDetalleVenta.Size = new Size(835, 270);
+            dgvDetalleVenta.Size = new Size(1211, 270);
             dgvDetalleVenta.TabIndex = 3;
             // 
             // groupBox1
@@ -177,9 +178,10 @@
             // 
             // btnRegistrarVenta
             // 
-            btnRegistrarVenta.Location = new Point(1535, 497);
+            btnRegistrarVenta.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrarVenta.Location = new Point(1651, 454);
             btnRegistrarVenta.Name = "btnRegistrarVenta";
-            btnRegistrarVenta.Size = new Size(140, 34);
+            btnRegistrarVenta.Size = new Size(183, 61);
             btnRegistrarVenta.TabIndex = 7;
             btnRegistrarVenta.Text = "Registrar Venta";
             btnRegistrarVenta.Click += btnRegistrarVenta_Click;
@@ -199,7 +201,7 @@
             groupBox_Ventas.Controls.Add(dgvDetalleVenta);
             groupBox_Ventas.Location = new Point(30, 407);
             groupBox_Ventas.Name = "groupBox_Ventas";
-            groupBox_Ventas.Size = new Size(881, 340);
+            groupBox_Ventas.Size = new Size(1257, 340);
             groupBox_Ventas.TabIndex = 12;
             groupBox_Ventas.TabStop = false;
             groupBox_Ventas.Text = "Medicamentos Ingresados";
@@ -238,9 +240,21 @@
             numBox_Cambio.TabIndex = 6;
             numBox_Cambio.ValueChanged += numBox_Cambio_ValueChanged;
             // 
+            // butt_Cancelar
+            // 
+            butt_Cancelar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            butt_Cancelar.Location = new Point(1651, 569);
+            butt_Cancelar.Name = "butt_Cancelar";
+            butt_Cancelar.Size = new Size(183, 64);
+            butt_Cancelar.TabIndex = 14;
+            butt_Cancelar.Text = "Cancelar";
+            butt_Cancelar.UseVisualStyleBackColor = true;
+            butt_Cancelar.Click += butt_Cancelar_Click;
+            // 
             // frmVentas
             // 
             ClientSize = new Size(1986, 835);
+            Controls.Add(butt_Cancelar);
             Controls.Add(groupBoxCobro);
             Controls.Add(btnRegistrarVenta);
             Controls.Add(groupBox_Ventas);
@@ -282,5 +296,6 @@
         private GroupBox groupBoxCobro;
         private NumericUpDown numBox_Cambio;
         private Label lblCambio;
+        private Button butt_Cancelar;
     }
 }

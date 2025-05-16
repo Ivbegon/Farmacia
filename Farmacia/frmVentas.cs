@@ -62,7 +62,7 @@ namespace Farmacia
                 }
 
                 dgvDetalleVenta.DataSource = null;
-                dgvDetalleVenta.DataSource = detalles;
+                FormatearTabla();
 
                 CalcularTotal();
             }
@@ -70,7 +70,25 @@ namespace Farmacia
             {
                 MessageBox.Show("Seleccione un medicamento.");
             }
+        }
 
+        private void FormatearTabla()
+        {
+            dgvDetalleVenta.Columns.Clear();
+
+            dgvDetalleVenta.Columns.Add("NombreProducto", "Nombre Producto");
+            dgvDetalleVenta.Columns.Add("Descripcion", "Descripción");
+            dgvDetalleVenta.Columns.Add("Cantidad", "Cantidad");
+            dgvDetalleVenta.Columns.Add("Costo", "Costo");
+
+            detalles.ForEach(d =>
+            {
+                Medicamento med =
+                    medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
+                decimal costo = med.Precio * d.Cantidad;
+                dgvDetalleVenta.Rows
+                    .Add(med.Nombre, med.Descripcion, med.Cantidad, costo);
+            });
         }
 
         private void CalcularTotal()
@@ -124,7 +142,7 @@ namespace Farmacia
                 var med = medicamentosNegocio.ObtenerMedicamento(det.IdMedicamento);
                 total += med.Precio * det.Cantidad;
             }
-            decimal cambio =  numBox_Cambio.Value - total;
+            decimal cambio = numBox_Cambio.Value - total;
 
 
 
@@ -137,6 +155,11 @@ namespace Farmacia
                 cambio = cambio * -1;
                 MessageBox.Show($"Todavia falta {cambio:C2}", "Faltan");
             }
+        }
+
+        private void butt_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
