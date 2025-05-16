@@ -33,90 +33,139 @@
             btnInformes = new Button();
             btnCerrarSesion = new Button();
             lblTitulo = new Label();
+            panelPrincipal = new Panel();
+            lblFooter = new Label();
+            panelPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // btnMedicamentos
             // 
-            btnMedicamentos.Location = new Point(343, 133);
+            btnMedicamentos.BackColor = Color.FromArgb(46, 204, 113);
+            btnMedicamentos.FlatAppearance.BorderSize = 0;
+            btnMedicamentos.FlatStyle = FlatStyle.Flat;
+            btnMedicamentos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnMedicamentos.ForeColor = Color.White;
+            btnMedicamentos.Location = new Point(300, 150);
             btnMedicamentos.Margin = new Padding(3, 4, 3, 4);
             btnMedicamentos.Name = "btnMedicamentos";
-            btnMedicamentos.Size = new Size(229, 53);
+            btnMedicamentos.Size = new Size(300, 60);
             btnMedicamentos.TabIndex = 0;
             btnMedicamentos.Text = "Gestión de Medicamentos";
-            btnMedicamentos.UseVisualStyleBackColor = true;
+            btnMedicamentos.UseVisualStyleBackColor = false;
             btnMedicamentos.Click += btnMedicamentos_Click;
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(343, 213);
+            btnVentas.BackColor = Color.FromArgb(46, 204, 113);
+            btnVentas.FlatAppearance.BorderSize = 0;
+            btnVentas.FlatStyle = FlatStyle.Flat;
+            btnVentas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.Location = new Point(300, 230);
             btnVentas.Margin = new Padding(3, 4, 3, 4);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(229, 53);
+            btnVentas.Size = new Size(300, 60);
             btnVentas.TabIndex = 1;
             btnVentas.Text = "Gestión de Ventas";
-            btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.UseVisualStyleBackColor = false;
             btnVentas.Click += btnVentas_Click;
             // 
             // btnInformes
             // 
-            btnInformes.Location = new Point(343, 293);
+            btnInformes.BackColor = Color.FromArgb(46, 204, 113);
+            btnInformes.FlatAppearance.BorderSize = 0;
+            btnInformes.FlatStyle = FlatStyle.Flat;
+            btnInformes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnInformes.ForeColor = Color.White;
+            btnInformes.Location = new Point(300, 310);
             btnInformes.Margin = new Padding(3, 4, 3, 4);
             btnInformes.Name = "btnInformes";
-            btnInformes.Size = new Size(229, 53);
+            btnInformes.Size = new Size(300, 60);
             btnInformes.TabIndex = 2;
             btnInformes.Text = "Informes de Ventas";
-            btnInformes.UseVisualStyleBackColor = true;
+            btnInformes.UseVisualStyleBackColor = false;
             btnInformes.Click += btnInformes_Click;
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Location = new Point(343, 373);
+            btnCerrarSesion.BackColor = Color.FromArgb(231, 76, 60);
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCerrarSesion.ForeColor = Color.White;
+            btnCerrarSesion.Location = new Point(300, 390);
             btnCerrarSesion.Margin = new Padding(3, 4, 3, 4);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(229, 53);
+            btnCerrarSesion.Size = new Size(300, 60);
             btnCerrarSesion.TabIndex = 3;
             btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitulo.Location = new Point(331, 40);
+            lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.DarkGreen;
+            lblTitulo.Location = new Point(290, 50);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(279, 37);
+            lblTitulo.Size = new Size(306, 54);
             lblTitulo.TabIndex = 4;
-            lblTitulo.Text = "Sistema de Farmacia";
+            lblTitulo.Text = "Menú Principal";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelPrincipal
+            // 
+            panelPrincipal.BackColor = Color.WhiteSmoke;
+            panelPrincipal.Controls.Add(lblFooter);
+            panelPrincipal.Controls.Add(lblTitulo);
+            panelPrincipal.Controls.Add(btnMedicamentos);
+            panelPrincipal.Controls.Add(btnCerrarSesion);
+            panelPrincipal.Controls.Add(btnVentas);
+            panelPrincipal.Controls.Add(btnInformes);
+            panelPrincipal.Dock = DockStyle.Fill;
+            panelPrincipal.Location = new Point(0, 0);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(900, 600);
+            panelPrincipal.TabIndex = 5;
+            // 
+            // lblFooter
+            // 
+            lblFooter.Dock = DockStyle.Bottom;
+            lblFooter.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            lblFooter.ForeColor = Color.Gray;
+            lblFooter.Location = new Point(0, 570);
+            lblFooter.Name = "lblFooter";
+            lblFooter.Size = new Size(900, 30);
+            lblFooter.TabIndex = 6;
+            lblFooter.Text = "© 2025 Farmacia. Todos los derechos reservados.";
+            lblFooter.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
-            Controls.Add(lblTitulo);
-            Controls.Add(btnCerrarSesion);
-            Controls.Add(btnInformes);
-            Controls.Add(btnVentas);
-            Controls.Add(btnMedicamentos);
+            ClientSize = new Size(900, 600);
+            Controls.Add(panelPrincipal);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "frmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Menú Principal";
+            Text = "Sistema de Farmacia - Menú Principal";
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
-        // Componentes
-        private System.Windows.Forms.Button btnMedicamentos;
-        private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button btnInformes;
-        private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Label lblTitulo;
-
         #endregion
+
+        private Button btnMedicamentos;
+        private Button btnVentas;
+        private Button btnInformes;
+        private Button btnCerrarSesion;
+        private Label lblTitulo;
+        private Panel panelPrincipal;
+        private Label lblFooter;
     }
 }

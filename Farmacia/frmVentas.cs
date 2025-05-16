@@ -33,7 +33,6 @@ namespace Farmacia
                 Medicamento seleccionado = (Medicamento)dgvBusqueda.SelectedRows[0].DataBoundItem;
                 int idMedicamento = seleccionado.IdMedicamento;
 
-
                 if (cantidad > seleccionado.Cantidad)
                 {
                     MessageBox.Show("No hay suficiente stock.");
@@ -120,8 +119,7 @@ namespace Farmacia
 
             int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
             MessageBox.Show($"Venta registrada con ID {idVenta}");
-            detalles.Clear();
-            dgvDetalleVenta.DataSource = null;
+            LimpiarFormulario();
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -144,8 +142,6 @@ namespace Farmacia
             }
             decimal cambio = numBox_Cambio.Value - total;
 
-
-
             if (cambio >= 0)
             {
                 lblCambio.Text = $"Cambio: {cambio:C2}";
@@ -153,7 +149,7 @@ namespace Farmacia
             else
             {
                 cambio = cambio * -1;
-                MessageBox.Show($"Todavia falta {cambio:C2}", "Faltan");
+                MessageBox.Show($"Todavía falta {cambio:C2}", "Faltan");
             }
         }
 
@@ -161,6 +157,30 @@ namespace Farmacia
         {
             this.Close();
         }
-    }
 
+        private void butt_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            detalles.Clear();
+
+            dgvDetalleVenta.DataSource = null;
+            dgvDetalleVenta.Rows.Clear();
+            dgvDetalleVenta.Columns.Clear();
+
+            txtBox_Busqueda.Text = string.Empty;
+            dgvBusqueda.DataSource = null;
+
+            nudCantidad.Value = nudCantidad.Minimum;
+            numBox_Cambio.Value = 0;
+
+            lblTotal.Text = "Total: $0.00";
+            lblCambio.Text = "Cambio: $0.00";
+
+            dgvBusqueda.DataSource = medicamentosNegocio.ListarMedicamentos();
+        }
+    }
 }

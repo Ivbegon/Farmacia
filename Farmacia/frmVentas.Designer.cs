@@ -25,8 +25,8 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvDetalleVenta = new DataGridView();
             groupBox1 = new GroupBox();
             dgvBusqueda = new DataGridView();
@@ -44,6 +44,7 @@
             lblCambio = new Label();
             numBox_Cambio = new NumericUpDown();
             butt_Cancelar = new Button();
+            butt_Limpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDetalleVenta).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBusqueda).BeginInit();
@@ -55,18 +56,18 @@
             // 
             // dgvDetalleVenta
             // 
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvDetalleVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvDetalleVenta.ColumnHeadersHeight = 34;
             dgvDetalleVenta.Location = new Point(23, 47);
             dgvDetalleVenta.Margin = new Padding(20);
@@ -116,7 +117,7 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(827, 49);
             label1.Name = "label1";
-            label1.Size = new Size(315, 32);
+            label1.Size = new Size(257, 28);
             label1.TabIndex = 11;
             label1.Text = "Cantidad del medicamento :";
             // 
@@ -126,7 +127,7 @@
             nudCantidad.Location = new Point(1158, 49);
             nudCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(99, 37);
+            nudCantidad.Size = new Size(99, 32);
             nudCantidad.TabIndex = 1;
             nudCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -154,7 +155,7 @@
             txtBox_Busqueda.Location = new Point(193, 44);
             txtBox_Busqueda.Name = "txtBox_Busqueda";
             txtBox_Busqueda.PlaceholderText = "Busca medicamentos ...";
-            txtBox_Busqueda.Size = new Size(469, 37);
+            txtBox_Busqueda.Size = new Size(469, 32);
             txtBox_Busqueda.TabIndex = 1;
             // 
             // lbl_medicamento
@@ -162,7 +163,7 @@
             lbl_medicamento.AutoSize = true;
             lbl_medicamento.Location = new Point(29, 49);
             lbl_medicamento.Name = "lbl_medicamento";
-            lbl_medicamento.Size = new Size(158, 30);
+            lbl_medicamento.Size = new Size(137, 25);
             lbl_medicamento.TabIndex = 0;
             lbl_medicamento.Text = "Medicamento :";
             // 
@@ -179,11 +180,11 @@
             // btnRegistrarVenta
             // 
             btnRegistrarVenta.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarVenta.Location = new Point(1651, 454);
+            btnRegistrarVenta.Location = new Point(1651, 434);
             btnRegistrarVenta.Name = "btnRegistrarVenta";
             btnRegistrarVenta.Size = new Size(183, 61);
             btnRegistrarVenta.TabIndex = 7;
-            btnRegistrarVenta.Text = "Registrar Venta";
+            btnRegistrarVenta.Text = "Registrar";
             btnRegistrarVenta.Click += btnRegistrarVenta_Click;
             // 
             // lblRecibido
@@ -226,7 +227,7 @@
             lblCambio.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCambio.Location = new Point(18, 152);
             lblCambio.Name = "lblCambio";
-            lblCambio.Size = new Size(148, 45);
+            lblCambio.Size = new Size(125, 37);
             lblCambio.TabIndex = 7;
             lblCambio.Text = "Cambio :";
             // 
@@ -236,14 +237,14 @@
             numBox_Cambio.Location = new Point(144, 102);
             numBox_Cambio.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numBox_Cambio.Name = "numBox_Cambio";
-            numBox_Cambio.Size = new Size(222, 39);
+            numBox_Cambio.Size = new Size(222, 34);
             numBox_Cambio.TabIndex = 6;
             numBox_Cambio.ValueChanged += numBox_Cambio_ValueChanged;
             // 
             // butt_Cancelar
             // 
             butt_Cancelar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            butt_Cancelar.Location = new Point(1651, 569);
+            butt_Cancelar.Location = new Point(1651, 619);
             butt_Cancelar.Name = "butt_Cancelar";
             butt_Cancelar.Size = new Size(183, 64);
             butt_Cancelar.TabIndex = 14;
@@ -251,9 +252,20 @@
             butt_Cancelar.UseVisualStyleBackColor = true;
             butt_Cancelar.Click += butt_Cancelar_Click;
             // 
+            // butt_Limpiar
+            // 
+            butt_Limpiar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            butt_Limpiar.Location = new Point(1651, 526);
+            butt_Limpiar.Name = "butt_Limpiar";
+            butt_Limpiar.Size = new Size(183, 61);
+            butt_Limpiar.TabIndex = 15;
+            butt_Limpiar.Text = "Limpiar";
+            butt_Limpiar.Click += butt_Limpiar_Click;
+            // 
             // frmVentas
             // 
-            ClientSize = new Size(1986, 835);
+            ClientSize = new Size(1924, 835);
+            Controls.Add(butt_Limpiar);
             Controls.Add(butt_Cancelar);
             Controls.Add(groupBoxCobro);
             Controls.Add(btnRegistrarVenta);
@@ -297,5 +309,6 @@
         private NumericUpDown numBox_Cambio;
         private Label lblCambio;
         private Button butt_Cancelar;
+        private Button butt_Limpiar;
     }
 }
