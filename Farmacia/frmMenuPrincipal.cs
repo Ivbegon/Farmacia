@@ -35,8 +35,8 @@ namespace Farmacia
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            //frmInformes form = new frmInformes();
-            //form.ShowDialog();
+            frmInformes form = new frmInformes();
+            form.ShowDialog();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
