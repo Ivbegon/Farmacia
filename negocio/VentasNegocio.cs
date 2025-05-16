@@ -24,7 +24,6 @@ namespace Negocio.Ventas
             {
                 ValidarVenta(venta, detalles);
 
-                // Calcular total y verificar stock
                 decimal total = 0;
                 foreach (var detalle in detalles)
                 {
@@ -35,21 +34,25 @@ namespace Negocio.Ventas
                     if (medicamento.Cantidad < detalle.Cantidad)
                         throw new Exception($"Stock insuficiente para {medicamento.Nombre}");
 
-                    //Arreglar el total de los reguistros de ventas
-
-
-                    //detalle.PrecioUnitario = medicamento.Precio;
-                    //detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
-                    //total += detalle.Subtotal;
+                    decimal subtotal = medicamento.Precio * detalle.Cantidad;
+                    total += subtotal;
                 }
 
+                if (venta.Vuelto < total)
+                    throw new Exception($"El monto recibido ({venta.Vuelto:C}) es menor al total ({total:C})");
+
                 venta.Total = total;
-                venta.Vuelto = venta.Vuelto - total; // Asumiendo que venta.Vuelto contiene el monto recibido
+                venta.Vuelto = venta.Vuelto - total;
+                venta.Fecha = DateTime.Now;
 
-                if (venta.Vuelto < 0)
-                    throw new Exception("El monto recibido es menor al total");
+                int idVenta = _datosVentas.RegistrarVenta(venta, detalles);
 
-                return _datosVentas.RegistrarVenta(venta, detalles);
+                foreach (var detalle in detalles)
+                {
+                    _medicamentosNegocio.ActualizarStock(detalle.IdMedicamento, -detalle.Cantidad);
+                }
+
+                return idVenta;
             }
             catch (Exception ex)
             {
@@ -69,6 +72,11 @@ namespace Negocio.Ventas
                 if (venta != null)
                 {
                     venta.Detalles = _datosVentas.ObtenerDetallesVenta(idVenta);
+
+                    if (venta.Total == 0 && venta.Detalles != null && venta.Detalles.Count > 0)
+                    {
+                        venta.Total = CalcularTotalVenta(venta.Detalles);
+                    }
                 }
                 return venta;
             }
@@ -83,13 +91,37 @@ namespace Negocio.Ventas
         {
             try
             {
-                return _datosVentas.ListarVentas(fechaInicio, fechaFin);
+                var ventas = _datosVentas.ListarVentas(fechaInicio, fechaFin);
+
+                foreach (var venta in ventas)
+                {
+                    if (venta.Total == 0 && venta.Detalles != null && venta.Detalles.Count > 0)
+                    {
+                        venta.Total = CalcularTotalVenta(venta.Detalles);
+                    }
+                }
+
+                return ventas;
             }
             catch (Exception ex)
             {
                 ManejarError(ex, "Error al listar ventas");
                 return new List<Venta>();
             }
+        }
+
+        private decimal CalcularTotalVenta(List<DetalleVenta> detalles)
+        {
+            decimal total = 0;
+            foreach (var detalle in detalles)
+            {
+                var medicamento = _medicamentosNegocio.ObtenerMedicamento(detalle.IdMedicamento);
+                if (medicamento != null)
+                {
+                    total += medicamento.Precio * detalle.Cantidad;
+                }
+            }
+            return total;
         }
 
         private void ValidarVenta(Venta venta, List<DetalleVenta> detalles)
