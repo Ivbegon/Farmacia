@@ -89,7 +89,7 @@ namespace Farmacia
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error al agregar medicamento");
+                    MessageBox.Show(ex.Message, "Error al editar el medicamento");
                 }
 
             }
@@ -101,15 +101,27 @@ namespace Farmacia
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0]
-                     .Cells["idMedicamento"].Value);
+               var result =  MessageBox.Show("¿Estas seguro de que deseas continuar?",
+                    "Confirmar", MessageBoxButtons.YesNo);
 
-                _medicamentosNegocio.EliminarMedicamento(id);
+                if (result == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgvMedicamentos.SelectedRows[0]
+                    .Cells["idMedicamento"].Value);
 
-                CargarMedicamentos();
-                Limpiar();
+                    _medicamentosNegocio.EliminarMedicamento(id);
+
+                    CargarMedicamentos();
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Operacion cancelada.", "Operacion cancelada"
+                        , MessageBoxButtons.OK);
+                }
             }
             else
             {

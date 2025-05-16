@@ -27,9 +27,9 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvMedicamentos = new DataGridView();
             txtNombre = new TextBox();
             txtDescripcion = new TextBox();
@@ -57,25 +57,25 @@
             // 
             // dgvMedicamentos
             // 
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 255, 250);
-            dgvMedicamentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(46, 204, 113);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvMedicamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(245, 255, 250);
+            dgvMedicamentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(46, 204, 113);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvMedicamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvMedicamentos.ColumnHeadersHeight = 29;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(46, 204, 113);
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvMedicamentos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(46, 204, 113);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvMedicamentos.DefaultCellStyle = dataGridViewCellStyle6;
             dgvMedicamentos.EnableHeadersVisualStyles = false;
             dgvMedicamentos.Location = new Point(542, 12);
             dgvMedicamentos.MultiSelect = false;
@@ -224,18 +224,22 @@
             // numBox_Cantidad
             // 
             numBox_Cantidad.Location = new Point(150, 148);
+            numBox_Cantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numBox_Cantidad.Name = "numBox_Cantidad";
             numBox_Cantidad.Size = new Size(320, 34);
             numBox_Cantidad.TabIndex = 7;
+            numBox_Cantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // numBox_Precio
             // 
             numBox_Precio.DecimalPlaces = 2;
             numBox_Precio.Location = new Point(150, 108);
             numBox_Precio.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numBox_Precio.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numBox_Precio.Name = "numBox_Precio";
             numBox_Precio.Size = new Size(320, 34);
             numBox_Precio.TabIndex = 5;
+            numBox_Precio.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // groupDatos
             // 

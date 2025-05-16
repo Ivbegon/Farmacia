@@ -53,7 +53,7 @@ namespace Negocio.Ventas
             }
             catch (Exception ex)
             {
-                ManejarError(ex, "Error al registrar venta");
+                ManejarError(ex, ex.Message);
                 return -1;
             }
         }

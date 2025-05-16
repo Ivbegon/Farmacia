@@ -103,23 +103,31 @@ namespace Farmacia
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            decimal montoRecibido = numBox_Cambio.Value;
-            decimal total = detalles.Sum(d =>
+            try
             {
-                var med = medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
-                return med.Precio * d.Cantidad;
-            });
+                decimal montoRecibido = numBox_Cambio.Value;
+                decimal total = detalles.Sum(d =>
+                {
+                    var med = medicamentosNegocio.ObtenerMedicamento(d.IdMedicamento);
+                    return med.Precio * d.Cantidad;
+                });
 
-            Venta venta = new Venta
+                Venta venta = new Venta
+                {
+                    IdEmpleado = 1,
+                    Vuelto = montoRecibido,
+                    Total = total
+                };
+
+                int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
+                MessageBox.Show($"Venta registrada con ID {idVenta}");
+                LimpiarFormulario();
+            }
+            catch(Exception ex)
             {
-                IdEmpleado = 1,
-                Vuelto = montoRecibido,
-                Total = total
-            };
-
-            int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
-            MessageBox.Show($"Venta registrada con ID {idVenta}");
-            LimpiarFormulario();
+                MessageBox.Show(ex.Message, "Error al reguistrar la venta");
+            }
+            
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)

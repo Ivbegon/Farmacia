@@ -30,7 +30,7 @@ namespace Negocio.Medicamentos
         }
 
         public void ActualizarMedicamento(Medicamento medicamento)
-        { 
+        {
             try
             {
                 ValidarMedicamento(medicamento);
@@ -38,7 +38,7 @@ namespace Negocio.Medicamentos
             }
             catch (Exception ex)
             {
-                ManejarError(ex, "Error al actualizar medicamento");
+                ManejarError(ex, ex.Message);
             }
         }
 
@@ -145,8 +145,8 @@ namespace Negocio.Medicamentos
                 if (medicamento.Cantidad < 0)
                     throw new Exception("La cantidad no puede ser negativa");
 
-                if (medicamento.FechaVencimiento < DateTime.Today)
-                    throw new Exception("La fecha de vencimiento no puede ser anterior a hoy");
+                if (medicamento.FechaVencimiento == DateTime.MinValue)
+                    throw new Exception("La fecha de vencimiento es obligatoria");
         }
     }
 }
