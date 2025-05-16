@@ -6,18 +6,21 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.66509cm</Width>
+              <Width>5.99241cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.66509cm</Width>
+              <Width>5.99241cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.66509cm</Width>
+              <Width>5.99241cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.82733cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.83812cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -28,19 +31,26 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>id medicamento</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#cccccc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4caf50</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -58,11 +68,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>nombre medicamento</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
@@ -71,6 +87,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4caf50</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -88,11 +105,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>cantidad</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox10</rd:DefaultName>
@@ -101,6 +124,44 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4caf50</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>precio</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#4caf50</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -112,30 +173,35 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.71465cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="id_medicamento">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!id_medicamento.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>id_medicamento</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -146,26 +212,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="nombre_medicamento">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!nombre_medicamento.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>nombre_medicamento</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -176,26 +247,66 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="cantidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!cantidad.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <rd:DefaultName>cantidad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="precio">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!precio.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Black</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>precio</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -213,6 +324,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -225,10 +337,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <Top>4.40125cm</Top>
+        <DataSetName>DataSetFarmacia</DataSetName>
+        <Top>3.29cm</Top>
         <Left>0.54552cm</Left>
-        <Height>1.2cm</Height>
-        <Width>13.99526cm</Width>
+        <Height>1.55278cm</Height>
+        <Width>21.80457cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -250,7 +363,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!id_empleado.Value</Value>
+                <Value>=Fields!id_empleado_ventas.Value</Value>
                 <Style>
                   <FontFamily>Segoe UI Black</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -265,7 +378,7 @@
         <Top>0.41486cm</Top>
         <Left>0.54552cm</Left>
         <Height>0.75875cm</Height>
-        <Width>6.57459cm</Width>
+        <Width>7.77743cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -284,7 +397,31 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>Nombre : </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!nombre.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!apellido.Value</Value>
                 <Style>
                   <FontFamily>Segoe UI Black</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -296,10 +433,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>1.73778cm</Top>
+        <Top>1.35cm</Top>
         <Left>0.54552cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Height>0.82931cm</Height>
+        <Width>6.57459cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border />
@@ -309,11 +446,333 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Subtotal : </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!total.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>5.58278cm</Top>
+        <Left>0.54552cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>3.94992cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!total.Value, "DataSetFarmacia") * 0.21</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox22</rd:DefaultName>
+        <Top>6.48264cm</Top>
+        <Left>1.99544cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>IVA :</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>6.48264cm</Top>
+        <Left>0.54552cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>1.24764cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total (IVA) :</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>7.3825cm</Top>
+        <Left>0.5207cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>3.008cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!total.Value, "DataSetFarmacia") * 1.21</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>7.3825cm</Top>
+        <Left>3.78037cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>3.008cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Recibido : </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>5.58278cm</Top>
+        <Left>9.51854cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>2.42972cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=(Sum(Fields!total.Value, "DataSetFarmacia") * 1.21) + Sum(Fields!vuelto.Value, "DataSetFarmacia")</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>5.58278cm</Top>
+        <Left>12.53035cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>2.42972cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Vuelto: </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>6.48264cm</Top>
+        <Left>9.51854cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>1.83cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!vuelto.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <Format>#,0.00 '€';(#,0.00 '€')</Format>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>6.48264cm</Top>
+        <Left>12.53035cm</Left>
+        <Height>0.72347cm</Height>
+        <Width>2.12986cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.31667in</Height>
+    <Height>3.51806in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>9.20833in</Width>
   <Page>
     <PageHeader>
       <Height>4.03578cm</Height>
@@ -443,7 +902,7 @@
           <Top>3.92994cm</Top>
           <Left>0.54552cm</Left>
           <Height>0cm</Height>
-          <Width>15.41897cm</Width>
+          <Width>22.54508cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -458,7 +917,7 @@
           <Value>Logo_farmacia</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.46567cm</Top>
-          <Left>11.34745cm</Left>
+          <Left>19.15675cm</Left>
           <Height>2.99198cm</Height>
           <Width>3.19333cm</Width>
           <ZIndex>4</ZIndex>
@@ -476,7 +935,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.36361cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -490,6 +949,7 @@
                   <Value>Contacto: contacto@ejemplo.com</Value>
                   <Style>
                     <FontFamily>Segoe UI Black</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <Color>DimGray</Color>
                   </Style>
                 </TextRun>
@@ -498,10 +958,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.40773cm</Top>
-          <Left>0.5207cm</Left>
+          <Top>0.67563cm</Top>
+          <Left>15.02408cm</Left>
           <Height>0.76934cm</Height>
-          <Width>6.26767cm</Width>
+          <Width>7.326cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -522,6 +982,7 @@
                   <Value>Teléfono: 123 45 67 89</Value>
                   <Style>
                     <FontFamily>Segoe UI Black</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <Color>DimGray</Color>
                   </Style>
                 </TextRun>
@@ -533,7 +994,7 @@
           <Top>0.63839cm</Top>
           <Left>0.5207cm</Left>
           <Height>0.76934cm</Height>
-          <Width>4.61667cm</Width>
+          <Width>5.18111cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -549,7 +1010,7 @@
           <Top>0.17639cm</Top>
           <Left>0.54552cm</Left>
           <Height>0cm</Height>
-          <Width>15.41897cm</Width>
+          <Width>22.54508cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -559,6 +1020,56 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Black</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <Color>DimGray</Color>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> / </Value>
+                  <Style>
+                    <FontFamily>Segoe UI Black</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <Color>DimGray</Color>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!OverallTotalPages</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Black</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <Color>DimGray</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>0.67563cm</Top>
+          <Left>5.95132cm</Left>
+          <Height>0.84694cm</Height>
+          <Width>8.70889cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -683,6 +1194,34 @@
         <Field Name="id_proveedor_medicamentos">
           <DataField>id_proveedor_medicamentos</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="email">
+          <DataField>email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cif">
+          <DataField>cif</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="telefono_empleados">
+          <DataField>telefono_empleados</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="email_empleados">
+          <DataField>email_empleados</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nick">
+          <DataField>nick</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="password">
+          <DataField>password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vuelto">
+          <DataField>vuelto</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

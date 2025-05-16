@@ -327,6 +327,20 @@ namespace Farmacia {
             
             private global::System.Data.DataColumn columnid_proveedor_medicamentos;
             
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columncif;
+            
+            private global::System.Data.DataColumn columntelefono_empleados;
+            
+            private global::System.Data.DataColumn columnemail_empleados;
+            
+            private global::System.Data.DataColumn columnnick;
+            
+            private global::System.Data.DataColumn columnpassword;
+            
+            private global::System.Data.DataColumn columnvuelto;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable1DataTable() {
@@ -548,6 +562,62 @@ namespace Farmacia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn cifColumn {
+                get {
+                    return this.columncif;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn telefono_empleadosColumn {
+                get {
+                    return this.columntelefono_empleados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn email_empleadosColumn {
+                get {
+                    return this.columnemail_empleados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nickColumn {
+                get {
+                    return this.columnnick;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn passwordColumn {
+                get {
+                    return this.columnpassword;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn vueltoColumn {
+                get {
+                    return this.columnvuelto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -602,7 +672,14 @@ namespace Farmacia {
                         int cantidad_medicamentos, 
                         System.DateTime fecha_vencimiento, 
                         bool requiere_receta, 
-                        int id_proveedor_medicamentos) {
+                        int id_proveedor_medicamentos, 
+                        string email, 
+                        string cif, 
+                        string telefono_empleados, 
+                        string email_empleados, 
+                        string nick, 
+                        string password, 
+                        decimal vuelto) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_ventas_detalle_ventas,
@@ -627,7 +704,14 @@ namespace Farmacia {
                         cantidad_medicamentos,
                         fecha_vencimiento,
                         requiere_receta,
-                        id_proveedor_medicamentos};
+                        id_proveedor_medicamentos,
+                        email,
+                        cif,
+                        telefono_empleados,
+                        email_empleados,
+                        nick,
+                        password,
+                        vuelto};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -685,6 +769,13 @@ namespace Farmacia {
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnrequiere_receta = base.Columns["requiere_receta"];
                 this.columnid_proveedor_medicamentos = base.Columns["id_proveedor_medicamentos"];
+                this.columnemail = base.Columns["email"];
+                this.columncif = base.Columns["cif"];
+                this.columntelefono_empleados = base.Columns["telefono_empleados"];
+                this.columnemail_empleados = base.Columns["email_empleados"];
+                this.columnnick = base.Columns["nick"];
+                this.columnpassword = base.Columns["password"];
+                this.columnvuelto = base.Columns["vuelto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -736,6 +827,20 @@ namespace Farmacia {
                 base.Columns.Add(this.columnrequiere_receta);
                 this.columnid_proveedor_medicamentos = new global::System.Data.DataColumn("id_proveedor_medicamentos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_proveedor_medicamentos);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columncif = new global::System.Data.DataColumn("cif", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncif);
+                this.columntelefono_empleados = new global::System.Data.DataColumn("telefono_empleados", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefono_empleados);
+                this.columnemail_empleados = new global::System.Data.DataColumn("email_empleados", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail_empleados);
+                this.columnnick = new global::System.Data.DataColumn("nick", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnick);
+                this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpassword);
+                this.columnvuelto = new global::System.Data.DataColumn("vuelto", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvuelto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columndni}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
@@ -745,6 +850,10 @@ namespace Farmacia {
                                 this.columnid_medicamento,
                                 this.columnid_proveedor,
                                 this.columnid_venta}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint3", new global::System.Data.DataColumn[] {
+                                this.columncif}, false));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint4", new global::System.Data.DataColumn[] {
+                                this.columnnick}, false));
                 this.columnid_ventas_detalle_ventas.AllowDBNull = false;
                 this.columnid_medicamento_detalle_ventas.AllowDBNull = false;
                 this.columncantidad.AllowDBNull = false;
@@ -779,6 +888,17 @@ namespace Farmacia {
                 this.columnid_venta.AllowDBNull = false;
                 this.columntotal.AllowDBNull = false;
                 this.columncantidad_medicamentos.AllowDBNull = false;
+                this.columnemail.MaxLength = 100;
+                this.columncif.Unique = true;
+                this.columncif.MaxLength = 20;
+                this.columntelefono_empleados.MaxLength = 20;
+                this.columnemail_empleados.MaxLength = 100;
+                this.columnnick.AllowDBNull = false;
+                this.columnnick.Unique = true;
+                this.columnnick.MaxLength = 50;
+                this.columnpassword.AllowDBNull = false;
+                this.columnpassword.MaxLength = 255;
+                this.columnvuelto.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1215,6 +1335,103 @@ namespace Farmacia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string email {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.emailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'email\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string cif {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.cifColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cif\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.cifColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string telefono_empleados {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.telefono_empleadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'telefono_empleados\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.telefono_empleadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string email_empleados {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.email_empleadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'email_empleados\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.email_empleadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nick {
+                get {
+                    return ((string)(this[this.tableDataTable1.nickColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.nickColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string password {
+                get {
+                    return ((string)(this[this.tableDataTable1.passwordColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.passwordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal vuelto {
+                get {
+                    return ((decimal)(this[this.tableDataTable1.vueltoColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.vueltoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdescripcionNull() {
                 return this.IsNull(this.tableDataTable1.descripcionColumn);
             }
@@ -1307,6 +1524,54 @@ namespace Farmacia {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setid_proveedor_medicamentosNull() {
                 this[this.tableDataTable1.id_proveedor_medicamentosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsemailNull() {
+                return this.IsNull(this.tableDataTable1.emailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemailNull() {
+                this[this.tableDataTable1.emailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscifNull() {
+                return this.IsNull(this.tableDataTable1.cifColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcifNull() {
+                this[this.tableDataTable1.cifColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istelefono_empleadosNull() {
+                return this.IsNull(this.tableDataTable1.telefono_empleadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settelefono_empleadosNull() {
+                this[this.tableDataTable1.telefono_empleadosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isemail_empleadosNull() {
+                return this.IsNull(this.tableDataTable1.email_empleadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setemail_empleadosNull() {
+                this[this.tableDataTable1.email_empleadosColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1492,6 +1757,13 @@ namespace Farmacia.DatosFarmaciaTableAdapters {
             tableMapping.ColumnMappings.Add("fecha_vencimiento", "fecha_vencimiento");
             tableMapping.ColumnMappings.Add("requiere_receta", "requiere_receta");
             tableMapping.ColumnMappings.Add("id_proveedor_medicamentos", "id_proveedor_medicamentos");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("cif", "cif");
+            tableMapping.ColumnMappings.Add("telefono_empleados", "telefono_empleados");
+            tableMapping.ColumnMappings.Add("email_empleados", "email_empleados");
+            tableMapping.ColumnMappings.Add("nick", "nick");
+            tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("vuelto", "vuelto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1511,7 +1783,8 @@ namespace Farmacia.DatosFarmaciaTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT detalle_ventas.id_venta AS id_ventas_detalle_ventas, detalle_ventas.id_medicamento AS id_medicamento_detalle_ventas, detalle_ventas.cantidad, empleados.id_empleado, empleados.nombre, empleados.apellido, empleados.dni, medicamentos.id_medicamento, 
              medicamentos.nombre AS nombre_medicamento, medicamentos.descripcion, medicamentos.precio, proveedores.id_proveedor, proveedores.nombre AS nombre_proveedor, proveedores.telefono, proveedores.direccion, ventas.id_venta, 
-             ventas.id_empleado AS id_empleado_ventas, ventas.fecha, ventas.total, medicamentos.cantidad AS cantidad_medicamentos, medicamentos.fecha_vencimiento, medicamentos.requiere_receta, medicamentos.id_proveedor AS id_proveedor_medicamentos
+             ventas.id_empleado AS id_empleado_ventas, ventas.fecha, ventas.total, medicamentos.cantidad AS cantidad_medicamentos, medicamentos.fecha_vencimiento, medicamentos.requiere_receta, medicamentos.id_proveedor AS id_proveedor_medicamentos, proveedores.email, 
+             proveedores.cif, empleados.telefono AS telefono_empleados, empleados.email AS email_empleados, empleados.nick, empleados.password, ventas.vuelto
 FROM   detalle_ventas INNER JOIN
              medicamentos ON detalle_ventas.id_medicamento = medicamentos.id_medicamento INNER JOIN
              proveedores ON medicamentos.id_proveedor = proveedores.id_proveedor INNER JOIN

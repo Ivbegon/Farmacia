@@ -9,12 +9,13 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="farmacia" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="farmacia" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT detalle_ventas.id_venta AS id_ventas_detalle_ventas, detalle_ventas.id_medicamento AS id_medicamento_detalle_ventas, detalle_ventas.cantidad, empleados.id_empleado, empleados.nombre, empleados.apellido, empleados.dni, medicamentos.id_medicamento, 
              medicamentos.nombre AS nombre_medicamento, medicamentos.descripcion, medicamentos.precio, proveedores.id_proveedor, proveedores.nombre AS nombre_proveedor, proveedores.telefono, proveedores.direccion, ventas.id_venta, 
-             ventas.id_empleado AS id_empleado_ventas, ventas.fecha, ventas.total, medicamentos.cantidad AS cantidad_medicamentos, medicamentos.fecha_vencimiento, medicamentos.requiere_receta, medicamentos.id_proveedor AS id_proveedor_medicamentos
+             ventas.id_empleado AS id_empleado_ventas, ventas.fecha, ventas.total, medicamentos.cantidad AS cantidad_medicamentos, medicamentos.fecha_vencimiento, medicamentos.requiere_receta, medicamentos.id_proveedor AS id_proveedor_medicamentos, proveedores.email, 
+             proveedores.cif, empleados.telefono AS telefono_empleados, empleados.email AS email_empleados, empleados.nick, empleados.password, ventas.vuelto
 FROM   detalle_ventas INNER JOIN
              medicamentos ON detalle_ventas.id_medicamento = medicamentos.id_medicamento INNER JOIN
              proveedores ON medicamentos.id_proveedor = proveedores.id_proveedor INNER JOIN
@@ -48,6 +49,13 @@ FROM   detalle_ventas INNER JOIN
               <Mapping SourceColumn="fecha_vencimiento" DataSetColumn="fecha_vencimiento" />
               <Mapping SourceColumn="requiere_receta" DataSetColumn="requiere_receta" />
               <Mapping SourceColumn="id_proveedor_medicamentos" DataSetColumn="id_proveedor_medicamentos" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="cif" DataSetColumn="cif" />
+              <Mapping SourceColumn="telefono_empleados" DataSetColumn="telefono_empleados" />
+              <Mapping SourceColumn="email_empleados" DataSetColumn="email_empleados" />
+              <Mapping SourceColumn="nick" DataSetColumn="nick" />
+              <Mapping SourceColumn="password" DataSetColumn="password" />
+              <Mapping SourceColumn="vuelto" DataSetColumn="vuelto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -121,6 +129,49 @@ FROM   detalle_ventas INNER JOIN
               <xs:element name="fecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
               <xs:element name="requiere_receta" msprop:Generator_ColumnPropNameInRow="requiere_receta" msprop:Generator_ColumnPropNameInTable="requiere_recetaColumn" msprop:Generator_ColumnVarNameInTable="columnrequiere_receta" msprop:Generator_UserColumnName="requiere_receta" type="xs:boolean" minOccurs="0" />
               <xs:element name="id_proveedor_medicamentos" msprop:Generator_ColumnPropNameInRow="id_proveedor_medicamentos" msprop:Generator_ColumnPropNameInTable="id_proveedor_medicamentosColumn" msprop:Generator_ColumnVarNameInTable="columnid_proveedor_medicamentos" msprop:Generator_UserColumnName="id_proveedor_medicamentos" type="xs:int" minOccurs="0" />
+              <xs:element name="email" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cif" msprop:Generator_ColumnPropNameInRow="cif" msprop:Generator_ColumnPropNameInTable="cifColumn" msprop:Generator_ColumnVarNameInTable="columncif" msprop:Generator_UserColumnName="cif" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_empleados" msprop:Generator_ColumnPropNameInRow="telefono_empleados" msprop:Generator_ColumnPropNameInTable="telefono_empleadosColumn" msprop:Generator_ColumnVarNameInTable="columntelefono_empleados" msprop:Generator_UserColumnName="telefono_empleados" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email_empleados" msprop:Generator_ColumnPropNameInRow="email_empleados" msprop:Generator_ColumnPropNameInTable="email_empleadosColumn" msprop:Generator_ColumnVarNameInTable="columnemail_empleados" msprop:Generator_UserColumnName="email_empleados" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nick" msprop:Generator_ColumnPropNameInRow="nick" msprop:Generator_ColumnPropNameInTable="nickColumn" msprop:Generator_ColumnVarNameInTable="columnnick" msprop:Generator_UserColumnName="nick">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_UserColumnName="password">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vuelto" msprop:Generator_ColumnPropNameInRow="vuelto" msprop:Generator_ColumnPropNameInTable="vueltoColumn" msprop:Generator_ColumnVarNameInTable="columnvuelto" msprop:Generator_UserColumnName="vuelto" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -138,6 +189,14 @@ FROM   detalle_ventas INNER JOIN
       <xs:field xpath="mstns:id_medicamento" />
       <xs:field xpath="mstns:id_proveedor" />
       <xs:field xpath="mstns:id_venta" />
+    </xs:unique>
+    <xs:unique name="Constraint3">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:cif" />
+    </xs:unique>
+    <xs:unique name="Constraint4">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:nick" />
     </xs:unique>
   </xs:element>
 </xs:schema>
