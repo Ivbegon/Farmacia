@@ -25,8 +25,8 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             dgvDetalleVenta = new DataGridView();
             groupBox1 = new GroupBox();
             dgvBusqueda = new DataGridView();
@@ -45,6 +45,7 @@
             numBox_Cambio = new NumericUpDown();
             butt_Cancelar = new Button();
             butt_Limpiar = new Button();
+            lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvDetalleVenta).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBusqueda).BeginInit();
@@ -56,18 +57,18 @@
             // 
             // dgvDetalleVenta
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dgvDetalleVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvDetalleVenta.ColumnHeadersHeight = 34;
             dgvDetalleVenta.Location = new Point(23, 47);
             dgvDetalleVenta.Margin = new Padding(20);
@@ -181,7 +182,7 @@
             // 
             btnRegistrarVenta.BackColor = Color.FromArgb(46, 204, 113);
             btnRegistrarVenta.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarVenta.Location = new Point(18, 424);
+            btnRegistrarVenta.Location = new Point(18, 224);
             btnRegistrarVenta.Name = "btnRegistrarVenta";
             btnRegistrarVenta.Size = new Size(370, 61);
             btnRegistrarVenta.TabIndex = 7;
@@ -250,11 +251,11 @@
             // 
             butt_Cancelar.BackColor = Color.FromArgb(231, 76, 60);
             butt_Cancelar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            butt_Cancelar.Location = new Point(18, 622);
+            butt_Cancelar.Location = new Point(18, 638);
             butt_Cancelar.Name = "butt_Cancelar";
             butt_Cancelar.Size = new Size(370, 64);
             butt_Cancelar.TabIndex = 14;
-            butt_Cancelar.Text = "Cancelar";
+            butt_Cancelar.Text = "Salir";
             butt_Cancelar.UseVisualStyleBackColor = false;
             butt_Cancelar.Click += butt_Cancelar_Click;
             // 
@@ -262,7 +263,7 @@
             // 
             butt_Limpiar.BackColor = Color.FromArgb(46, 204, 113);
             butt_Limpiar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_Limpiar.Location = new Point(18, 529);
+            butt_Limpiar.Location = new Point(18, 571);
             butt_Limpiar.Name = "butt_Limpiar";
             butt_Limpiar.Size = new Size(370, 61);
             butt_Limpiar.TabIndex = 15;
@@ -270,9 +271,22 @@
             butt_Limpiar.UseVisualStyleBackColor = false;
             butt_Limpiar.Click += butt_Limpiar_Click;
             // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.DarkGreen;
+            lblTitulo.Location = new Point(30, 31);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(707, 54);
+            lblTitulo.TabIndex = 14;
+            lblTitulo.Text = "Terminal de venta de Medicamentos";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // frmVentas
             // 
             ClientSize = new Size(1648, 835);
+            Controls.Add(lblTitulo);
             Controls.Add(groupBoxCobro);
             Controls.Add(groupBox_Ventas);
             Controls.Add(groupBox1);
@@ -290,6 +304,7 @@
             groupBoxCobro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numBox_Cambio).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
 
@@ -315,5 +330,6 @@
         private Label lblCambio;
         private Button butt_Cancelar;
         private Button butt_Limpiar;
+        private Label lblTitulo;
     }
 }
