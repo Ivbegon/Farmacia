@@ -9,17 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FastReport.Data.Postgres" Version="2025.2.3" />
-    <PackageReference Include="FastReport.OpenSource" Version="2025.2.0" />
-    <PackageReference Include="FastReport.OpenSource.Data.Postgres" Version="2021.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\entidades\entidades.csproj" />
     <ProjectReference Include="..\negocio\negocio.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="DatosFarmacia.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DatosFarmacia.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -59,6 +58,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="DatosFarmacia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosFarmacia.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Pruebaxsd.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Pruebaxsd.Designer.cs</LastGenOutput>
