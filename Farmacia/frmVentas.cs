@@ -119,14 +119,7 @@ namespace Farmacia
                     Total = total
                 };
 
-                detalles.ForEach(d =>
-                {
-                    MessageBox.Show(d.id_medicamento.ToString(), "Id");
-                });
-                
-
                 int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
-                MessageBox.Show($"Venta registrada con ID {idVenta}");
                 LimpiarFormulario();
             }
             catch(Exception ex)

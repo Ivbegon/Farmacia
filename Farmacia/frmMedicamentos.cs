@@ -104,8 +104,8 @@ namespace Farmacia
 
             if (dgvMedicamentos.SelectedRows.Count > 0)
             {
-               var result =  MessageBox.Show("¿Estas seguro de que deseas continuar?",
-                    "Confirmar", MessageBoxButtons.YesNo);
+                var result = MessageBox.Show("¿Estas seguro de que deseas continuar?",
+                     "Confirmar", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
@@ -160,15 +160,20 @@ namespace Farmacia
         {
             txtNombre.Clear();
             txtDescripcion.Clear();
-            numBox_Precio.Value = 0;
-            numBox_Cantidad.Value = 0;
+            numBox_Precio.Value = 1;
+            numBox_Cantidad.Value = 1;
 
             if (cmbProveedores.Items.Count > 0)
                 cmbProveedores.SelectedIndex = 0;
             else
                 cmbProveedores.SelectedIndex = -1;
-            
+
             chkReceta.Checked = false;
+        }
+
+        private void buttCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

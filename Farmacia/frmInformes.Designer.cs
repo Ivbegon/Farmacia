@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pruebaxsd1 = new Pruebaxsd();
-            ((System.ComponentModel.ISupportInitialize)pruebaxsd1).BeginInit();
             SuspendLayout();
             // 
             // pruebaxsd1
             // 
-            pruebaxsd1.DataSetName = "Pruebaxsd";
-            pruebaxsd1.Namespace = "http://tempuri.org/Pruebaxsd.xsd";
-            pruebaxsd1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmInformes
             // 
@@ -46,12 +41,10 @@
             Name = "frmInformes";
             Text = "FormularioInforme";
             Load += frmInformes_Load;
-            ((System.ComponentModel.ISupportInitialize)pruebaxsd1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Pruebaxsd pruebaxsd1;
     }
 }

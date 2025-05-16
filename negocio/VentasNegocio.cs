@@ -49,11 +49,6 @@ namespace Negocio.Ventas
 
                 int idVenta = _datosVentas.RegistrarVenta(venta, detalles);
 
-                foreach (var detalle in detalles)
-                {
-                    _medicamentosNegocio.ActualizarStock(detalle.id_medicamento, -detalle.cantidad);
-                }
-
                 return idVenta;
             }
             catch (Exception ex)
