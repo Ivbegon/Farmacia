@@ -122,11 +122,11 @@ namespace Farmacia
                 int idVenta = ventasNegocio.RegistrarVenta(venta, detalles);
                 LimpiarFormulario();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error al reguistrar la venta");
             }
-            
+
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -189,5 +189,6 @@ namespace Farmacia
 
             dgvBusqueda.DataSource = medicamentosNegocio.ListarMedicamentos();
         }
+
     }
 }
