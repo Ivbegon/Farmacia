@@ -25,8 +25,8 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvDetalleVenta = new DataGridView();
             groupBox1 = new GroupBox();
             dgvBusqueda = new DataGridView();
@@ -56,18 +56,18 @@
             // 
             // dgvDetalleVenta
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvDetalleVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvDetalleVenta.ColumnHeadersHeight = 34;
             dgvDetalleVenta.Location = new Point(23, 47);
             dgvDetalleVenta.Margin = new Padding(20);
@@ -179,12 +179,14 @@
             // 
             // btnRegistrarVenta
             // 
+            btnRegistrarVenta.BackColor = Color.FromArgb(46, 204, 113);
             btnRegistrarVenta.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrarVenta.Location = new Point(1651, 434);
             btnRegistrarVenta.Name = "btnRegistrarVenta";
             btnRegistrarVenta.Size = new Size(183, 61);
             btnRegistrarVenta.TabIndex = 7;
             btnRegistrarVenta.Text = "Registrar";
+            btnRegistrarVenta.UseVisualStyleBackColor = false;
             btnRegistrarVenta.Click += btnRegistrarVenta_Click;
             // 
             // lblRecibido
@@ -243,13 +245,14 @@
             // 
             // butt_Cancelar
             // 
+            butt_Cancelar.BackColor = Color.FromArgb(231, 76, 60);
             butt_Cancelar.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
             butt_Cancelar.Location = new Point(1651, 619);
             butt_Cancelar.Name = "butt_Cancelar";
             butt_Cancelar.Size = new Size(183, 64);
             butt_Cancelar.TabIndex = 14;
             butt_Cancelar.Text = "Cancelar";
-            butt_Cancelar.UseVisualStyleBackColor = true;
+            butt_Cancelar.UseVisualStyleBackColor = false;
             butt_Cancelar.Click += butt_Cancelar_Click;
             // 
             // butt_Limpiar
@@ -261,6 +264,7 @@
             butt_Limpiar.Size = new Size(183, 61);
             butt_Limpiar.TabIndex = 15;
             butt_Limpiar.Text = "Limpiar";
+            butt_Limpiar.UseVisualStyleBackColor = false;
             butt_Limpiar.Click += butt_Limpiar_Click;
             // 
             // frmVentas
