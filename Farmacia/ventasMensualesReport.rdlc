@@ -160,7 +160,9 @@
                       <ChartDataLabel>
                         <Style />
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>#2ecc71</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
